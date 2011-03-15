@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "MYRootController.h"
 
 @interface LastDayAppDelegate : NSObject <UIApplicationDelegate> {
     
     UIWindow *window;
+	UINavigationController* navigationController;
     
 @private
     NSManagedObjectContext *managedObjectContext_;

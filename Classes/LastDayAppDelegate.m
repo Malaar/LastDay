@@ -19,9 +19,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
-    // Override point for customization after application launch.
+
+	MYRootController* rootController = [[[MYRootController alloc] init] autorelease];
+	navigationController = [[UINavigationController alloc]
+													initWithRootViewController:rootController];
+    [self.window addSubview:navigationController.view];
     
-    [self.window makeKeyAndVisible];
+	[self.window makeKeyAndVisible];
     
     return YES;
 }
@@ -193,6 +197,8 @@
     [managedObjectContext_ release];
     [managedObjectModel_ release];
     [persistentStoreCoordinator_ release];
+	
+	[navigationController release];
     
     [window release];
     [super dealloc];
