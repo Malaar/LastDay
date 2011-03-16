@@ -15,6 +15,10 @@
 		027433FA13301A2200B63F5F /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = 027433F413301A2200B63F5F /* news.png */; };
 		027433FB13301A2200B63F5F /* weather.png in Resources */ = {isa = PBXBuildFile; fileRef = 027433F513301A2200B63F5F /* weather.png */; };
 		0274341313301BD000B63F5F /* MYNewsRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0274341213301BD000B63F5F /* MYNewsRootController.m */; };
+		027BA47C13317D5000409515 /* tinystr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 027BA47713317D5000409515 /* tinystr.mm */; };
+		027BA47D13317D5000409515 /* tinyxml.mm in Sources */ = {isa = PBXBuildFile; fileRef = 027BA47913317D5000409515 /* tinyxml.mm */; };
+		027BA47E13317D5000409515 /* tinyxmlerror.mm in Sources */ = {isa = PBXBuildFile; fileRef = 027BA47A13317D5000409515 /* tinyxmlerror.mm */; };
+		027BA47F13317D5000409515 /* tinyxmlparser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 027BA47B13317D5000409515 /* tinyxmlparser.mm */; };
 		02CC54BC133026630051FE80 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 02CC54BA133026630051FE80 /* Icon.png */; };
 		02CC54BD133026630051FE80 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02CC54BB133026630051FE80 /* Icon@2x.png */; };
 		02ED94961331547D00D58A35 /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ED94851331547D00D58A35 /* NSObject+JSON.m */; };
@@ -64,6 +68,12 @@
 		027433F513301A2200B63F5F /* weather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather.png; sourceTree = "<group>"; };
 		0274341113301BD000B63F5F /* MYNewsRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYNewsRootController.h; sourceTree = "<group>"; };
 		0274341213301BD000B63F5F /* MYNewsRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYNewsRootController.m; sourceTree = "<group>"; };
+		027BA47613317D5000409515 /* tinystr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tinystr.h; path = TinyXML/tinystr.h; sourceTree = SOURCE_ROOT; };
+		027BA47713317D5000409515 /* tinystr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = tinystr.mm; path = TinyXML/tinystr.mm; sourceTree = SOURCE_ROOT; };
+		027BA47813317D5000409515 /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tinyxml.h; path = TinyXML/tinyxml.h; sourceTree = SOURCE_ROOT; };
+		027BA47913317D5000409515 /* tinyxml.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = tinyxml.mm; path = TinyXML/tinyxml.mm; sourceTree = SOURCE_ROOT; };
+		027BA47A13317D5000409515 /* tinyxmlerror.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = tinyxmlerror.mm; path = TinyXML/tinyxmlerror.mm; sourceTree = SOURCE_ROOT; };
+		027BA47B13317D5000409515 /* tinyxmlparser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = tinyxmlparser.mm; path = TinyXML/tinyxmlparser.mm; sourceTree = SOURCE_ROOT; };
 		02CC54BA133026630051FE80 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = resources/Icon.png; sourceTree = SOURCE_ROOT; };
 		02CC54BB133026630051FE80 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "resources/Icon@2x.png"; sourceTree = SOURCE_ROOT; };
 		02ED94831331547D00D58A35 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSON.h; path = JSONFramework/JSON.h; sourceTree = SOURCE_ROOT; };
@@ -133,6 +143,19 @@
 			name = ThemeImages;
 			path = resources/ThemeImages;
 			sourceTree = "<group>";
+		};
+		027BA47513317D5000409515 /* TinyXML */ = {
+			isa = PBXGroup;
+			children = (
+				027BA47613317D5000409515 /* tinystr.h */,
+				027BA47713317D5000409515 /* tinystr.mm */,
+				027BA47813317D5000409515 /* tinyxml.h */,
+				027BA47913317D5000409515 /* tinyxml.mm */,
+				027BA47A13317D5000409515 /* tinyxmlerror.mm */,
+				027BA47B13317D5000409515 /* tinyxmlparser.mm */,
+			);
+			path = TinyXML;
+			sourceTree = SOURCE_ROOT;
 		};
 		02ED94821331547D00D58A35 /* JSONFramework */ = {
 			isa = PBXGroup;
@@ -208,6 +231,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				027BA47513317D5000409515 /* TinyXML */,
 				02ED94821331547D00D58A35 /* JSONFramework */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -339,6 +363,10 @@
 				02ED94A71331559700D58A35 /* MYNewsRSSItem.m in Sources */,
 				02ED94B71331614300D58A35 /* MYNewsRSSFeed.m in Sources */,
 				02ED94BB133169AD00D58A35 /* MYNewsRSSFeedController.m in Sources */,
+				027BA47C13317D5000409515 /* tinystr.mm in Sources */,
+				027BA47D13317D5000409515 /* tinyxml.mm in Sources */,
+				027BA47E13317D5000409515 /* tinyxmlerror.mm in Sources */,
+				027BA47F13317D5000409515 /* tinyxmlparser.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
