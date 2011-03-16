@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-
-@interface MYNewsController : UITableViewController
+/// Root controller for news
+@interface MYNewsRootController : UITabBarController
 {
 
 }
+
+- (NSMutableArray*) getRSSFeeds; ///< load rss feeds from json
 
 @end

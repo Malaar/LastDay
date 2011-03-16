@@ -111,10 +111,10 @@
 
 
 //==========================================================================================
--(MYNewsController*) newsController
+-(MYNewsRootController*) newsController
 {
 	if(!newsController)
-		newsController = [[MYNewsController alloc] init];
+		newsController = [[MYNewsRootController alloc] init];
 	
 	return newsController;
 }

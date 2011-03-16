@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MYNewsController.h"
+#import "MYNewsRootController.h"
 
 
 @interface MYRootController : UITableViewController
@@ -15,9 +15,9 @@
 	NSMutableArray* themeArray;
 
 	// controllers
-	MYNewsController* newsController;
+	MYNewsRootController* newsController;
 }
 
--(MYNewsController*) newsController;
+-(MYNewsRootController*) newsController;
 
 @end
