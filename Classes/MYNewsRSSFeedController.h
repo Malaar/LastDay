@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "MYNewsRSSFeed.h"
+#import "MYNewsRSSDetailedController.h"
 
 @interface MYNewsRSSFeedController : UITableViewController
 {
 	MYNewsRSSFeed* rssFeed;			///< rss feed
 	NSMutableArray* news;			///< news info
+	NSURLConnection* rssConnection;
+	NSMutableData* receivedData;	///< received data from server
+	
+	MYNewsRSSDetailedController* detailedController;
 }
 
 @property (nonatomic, retain) MYNewsRSSFeed* rssFeed;

@@ -1,14 +1,14 @@
 [
 	{
 		"feedTitle" : "World",
-		"rssURL"    : ""
+		"rssURL"    : "http://feeds.bbci.co.uk/news/world/rss.xml"
 	},
 	{
 		"feedTitle" : "Env",
-		"rssURL"    : ""
+		"rssURL"    : "http://feeds.bbci.co.uk/news/science_and_environment/rss.xml"
 	},
 	{
 		"feedTitle" : "Business",
-		"rssURL"    : ""
+		"rssURL"    : "http://feeds.bbci.co.uk/news/business/rss.xml"
 	}
 ]

@@ -16,6 +16,7 @@
 @synthesize link;
 @synthesize pubDate;
 @synthesize guid;
+@synthesize image;
 
 //==========================================================================================
 + (id) newsRSSItem

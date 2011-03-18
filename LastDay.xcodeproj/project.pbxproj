@@ -19,6 +19,8 @@
 		027BA47D13317D5000409515 /* tinyxml.mm in Sources */ = {isa = PBXBuildFile; fileRef = 027BA47913317D5000409515 /* tinyxml.mm */; };
 		027BA47E13317D5000409515 /* tinyxmlerror.mm in Sources */ = {isa = PBXBuildFile; fileRef = 027BA47A13317D5000409515 /* tinyxmlerror.mm */; };
 		027BA47F13317D5000409515 /* tinyxmlparser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 027BA47B13317D5000409515 /* tinyxmlparser.mm */; };
+		028160951332A56300D8581B /* MYNewsRSSDetailedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 028160931332A56300D8581B /* MYNewsRSSDetailedController.m */; };
+		028160961332A56300D8581B /* MYNewsRSSDetailedController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 028160941332A56300D8581B /* MYNewsRSSDetailedController.xib */; };
 		02CC54BC133026630051FE80 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 02CC54BA133026630051FE80 /* Icon.png */; };
 		02CC54BD133026630051FE80 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02CC54BB133026630051FE80 /* Icon@2x.png */; };
 		02ED94961331547D00D58A35 /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ED94851331547D00D58A35 /* NSObject+JSON.m */; };
@@ -32,7 +34,7 @@
 		02ED949E1331547D00D58A35 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ED94951331547D00D58A35 /* SBJsonWriter.m */; };
 		02ED94A71331559700D58A35 /* MYNewsRSSItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ED94A61331559700D58A35 /* MYNewsRSSItem.m */; };
 		02ED94B71331614300D58A35 /* MYNewsRSSFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ED94B61331614300D58A35 /* MYNewsRSSFeed.m */; };
-		02ED94BB133169AD00D58A35 /* MYNewsRSSFeedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ED94B9133169AD00D58A35 /* MYNewsRSSFeedController.m */; };
+		02ED94BB133169AD00D58A35 /* MYNewsRSSFeedController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02ED94B9133169AD00D58A35 /* MYNewsRSSFeedController.mm */; };
 		02ED951A133171AE00D58A35 /* NewsRSSFeed.json in Resources */ = {isa = PBXBuildFile; fileRef = 02ED9519133171AE00D58A35 /* NewsRSSFeed.json */; };
 		1D3623260D0F684500981E51 /* LastDayAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* LastDayAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -69,11 +71,14 @@
 		0274341113301BD000B63F5F /* MYNewsRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYNewsRootController.h; sourceTree = "<group>"; };
 		0274341213301BD000B63F5F /* MYNewsRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYNewsRootController.m; sourceTree = "<group>"; };
 		027BA47613317D5000409515 /* tinystr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tinystr.h; path = TinyXML/tinystr.h; sourceTree = SOURCE_ROOT; };
-		027BA47713317D5000409515 /* tinystr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = tinystr.mm; path = TinyXML/tinystr.mm; sourceTree = SOURCE_ROOT; };
+		027BA47713317D5000409515 /* tinystr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = tinystr.mm; sourceTree = "<group>"; };
 		027BA47813317D5000409515 /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tinyxml.h; path = TinyXML/tinyxml.h; sourceTree = SOURCE_ROOT; };
-		027BA47913317D5000409515 /* tinyxml.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = tinyxml.mm; path = TinyXML/tinyxml.mm; sourceTree = SOURCE_ROOT; };
-		027BA47A13317D5000409515 /* tinyxmlerror.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = tinyxmlerror.mm; path = TinyXML/tinyxmlerror.mm; sourceTree = SOURCE_ROOT; };
-		027BA47B13317D5000409515 /* tinyxmlparser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = tinyxmlparser.mm; path = TinyXML/tinyxmlparser.mm; sourceTree = SOURCE_ROOT; };
+		027BA47913317D5000409515 /* tinyxml.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = tinyxml.mm; sourceTree = "<group>"; };
+		027BA47A13317D5000409515 /* tinyxmlerror.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = tinyxmlerror.mm; sourceTree = "<group>"; };
+		027BA47B13317D5000409515 /* tinyxmlparser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = tinyxmlparser.mm; sourceTree = "<group>"; };
+		028160921332A56300D8581B /* MYNewsRSSDetailedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYNewsRSSDetailedController.h; sourceTree = "<group>"; };
+		028160931332A56300D8581B /* MYNewsRSSDetailedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYNewsRSSDetailedController.m; sourceTree = "<group>"; };
+		028160941332A56300D8581B /* MYNewsRSSDetailedController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MYNewsRSSDetailedController.xib; path = Classes/MYNewsRSSDetailedController.xib; sourceTree = "<group>"; };
 		02CC54BA133026630051FE80 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = resources/Icon.png; sourceTree = SOURCE_ROOT; };
 		02CC54BB133026630051FE80 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "resources/Icon@2x.png"; sourceTree = SOURCE_ROOT; };
 		02ED94831331547D00D58A35 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSON.h; path = JSONFramework/JSON.h; sourceTree = SOURCE_ROOT; };
@@ -100,7 +105,7 @@
 		02ED94B51331614300D58A35 /* MYNewsRSSFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYNewsRSSFeed.h; sourceTree = "<group>"; };
 		02ED94B61331614300D58A35 /* MYNewsRSSFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYNewsRSSFeed.m; sourceTree = "<group>"; };
 		02ED94B8133169AD00D58A35 /* MYNewsRSSFeedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYNewsRSSFeedController.h; sourceTree = "<group>"; };
-		02ED94B9133169AD00D58A35 /* MYNewsRSSFeedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYNewsRSSFeedController.m; sourceTree = "<group>"; };
+		02ED94B9133169AD00D58A35 /* MYNewsRSSFeedController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MYNewsRSSFeedController.mm; sourceTree = "<group>"; };
 		02ED9519133171AE00D58A35 /* NewsRSSFeed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = NewsRSSFeed.json; path = resources/NewsRSSFeed.json; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* LastDayAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LastDayAppDelegate.h; path = Classes/LastDayAppDelegate.h; sourceTree = SOURCE_ROOT; };
@@ -193,7 +198,9 @@
 				02ED94B51331614300D58A35 /* MYNewsRSSFeed.h */,
 				02ED94B61331614300D58A35 /* MYNewsRSSFeed.m */,
 				02ED94B8133169AD00D58A35 /* MYNewsRSSFeedController.h */,
-				02ED94B9133169AD00D58A35 /* MYNewsRSSFeedController.m */,
+				02ED94B9133169AD00D58A35 /* MYNewsRSSFeedController.mm */,
+				028160921332A56300D8581B /* MYNewsRSSDetailedController.h */,
+				028160931332A56300D8581B /* MYNewsRSSDetailedController.m */,
 			);
 			name = News;
 			sourceTree = "<group>";
@@ -201,6 +208,7 @@
 		02ED94E013316DD500D58A35 /* NIB */ = {
 			isa = PBXGroup;
 			children = (
+				028160941332A56300D8581B /* MYNewsRSSDetailedController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 			);
 			name = NIB;
@@ -335,6 +343,7 @@
 				02CC54BC133026630051FE80 /* Icon.png in Resources */,
 				02CC54BD133026630051FE80 /* Icon@2x.png in Resources */,
 				02ED951A133171AE00D58A35 /* NewsRSSFeed.json in Resources */,
+				028160961332A56300D8581B /* MYNewsRSSDetailedController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,11 +371,12 @@
 				02ED949E1331547D00D58A35 /* SBJsonWriter.m in Sources */,
 				02ED94A71331559700D58A35 /* MYNewsRSSItem.m in Sources */,
 				02ED94B71331614300D58A35 /* MYNewsRSSFeed.m in Sources */,
-				02ED94BB133169AD00D58A35 /* MYNewsRSSFeedController.m in Sources */,
+				02ED94BB133169AD00D58A35 /* MYNewsRSSFeedController.mm in Sources */,
 				027BA47C13317D5000409515 /* tinystr.mm in Sources */,
 				027BA47D13317D5000409515 /* tinyxml.mm in Sources */,
 				027BA47E13317D5000409515 /* tinyxmlerror.mm in Sources */,
 				027BA47F13317D5000409515 /* tinyxmlparser.mm in Sources */,
+				028160951332A56300D8581B /* MYNewsRSSDetailedController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

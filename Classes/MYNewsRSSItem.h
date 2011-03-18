@@ -16,6 +16,7 @@
 	NSString* link;
 	NSString* pubDate;
 	NSString* guid;
+	UIImage* image;
 }
 
 + (id) newsRSSItem;
@@ -28,5 +29,6 @@
 @property (nonatomic, retain) NSString* link;
 @property (nonatomic, retain) NSString* pubDate;
 @property (nonatomic, retain) NSString* guid;
+@property (nonatomic, retain) UIImage* image;
 
 @end

@@ -2,16 +2,16 @@
 {
 	0274335B132FFECD00B63F5F /* MYRootController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {755, 318}}";
+			sepNavIntBoundsRect = "{{0, 0}, {708, 326}}";
 			sepNavSelRange = "{281, 0}";
 			sepNavVisRange = "{0, 387}";
 		};
 	};
 	0274335C132FFECD00B63F5F /* MYRootController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {852, 1651}}";
-			sepNavSelRange = "{1338, 1423}";
-			sepNavVisRange = "{2368, 709}";
+			sepNavIntBoundsRect = "{{0, 0}, {852, 1638}}";
+			sepNavSelRange = "{2614, 0}";
+			sepNavVisRange = "{2368, 708}";
 		};
 	};
 	027433C61330084800B63F5F /* MYThemeData.h */ = {
@@ -23,35 +23,361 @@
 	};
 	027433C71330084800B63F5F /* MYThemeData.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {755, 611}}";
-			sepNavSelRange = "{899, 0}";
-			sepNavVisRange = "{475, 709}";
+			sepNavIntBoundsRect = "{{0, 0}, {708, 611}}";
+			sepNavSelRange = "{730, 93}";
+			sepNavVisRange = "{158, 682}";
 		};
 	};
 	0274341113301BD000B63F5F /* MYNewsRootController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {708, 341}}";
+			sepNavIntBoundsRect = "{{0, 0}, {708, 326}}";
 			sepNavSelRange = "{249, 0}";
 			sepNavVisRange = "{0, 321}";
 		};
 	};
 	0274341213301BD000B63F5F /* MYNewsRootController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {796, 1287}}";
-			sepNavSelRange = "{2191, 0}";
-			sepNavVisRange = "{1858, 1094}";
+			sepNavIntBoundsRect = "{{0, 0}, {796, 1300}}";
+			sepNavSelRange = "{500, 0}";
+			sepNavVisRange = "{1952, 1005}";
 			sepNavWindowFrame = "{{15, 183}, {750, 558}}";
 		};
 	};
-	027BA49913317D9000409515 /* PBXTextBookmark */ = {
+	027BA47613317D5000409515 /* tinystr.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {649, 4108}}";
+			sepNavSelRange = "{2472, 0}";
+			sepNavVisRange = "{880, 552}";
+		};
+	};
+	027BA47713317D5000409515 /* tinystr.mm */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {708, 1378}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 943}";
+		};
+	};
+	027BA47813317D5000409515 /* tinyxml.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1146, 23036}}";
+			sepNavSelRange = "{23115, 37}";
+			sepNavVisRange = "{22716, 831}";
+		};
+	};
+	027BA47913317D5000409515 /* tinyxml.mm */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {708, 23504}}";
+			sepNavSelRange = "{31173, 0}";
+			sepNavVisRange = "{30936, 518}";
+		};
+	};
+	027BA47A13317D5000409515 /* tinyxmlerror.mm */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {708, 637}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 973}";
+		};
+	};
+	027BA47B13317D5000409515 /* tinyxmlparser.mm */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {708, 20839}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 993}";
+		};
+	};
+	02815FB1133289E600D8581B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 02815FB2133289E600D8581B /* NSObject.h */;
+		name = "NSObject.h: 74";
+		rLen = 11;
+		rLoc = 1304;
+		rType = 0;
+		vrLen = 382;
+		vrLoc = 1075;
+	};
+	02815FB2133289E600D8581B /* NSObject.h */ = {
+		isa = PBXFileReference;
+		name = NSObject.h;
+		path = /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObject.h;
+		sourceTree = "<absolute>";
+	};
+	02815FDD1332903200D8581B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 02ED94B51331614300D58A35 /* MYNewsRSSFeed.h */;
+		name = "MYNewsRSSFeed.h: 11";
+		rLen = 0;
+		rLoc = 185;
+		rType = 0;
+		vrLen = 571;
+		vrLoc = 0;
+	};
+	02816002133293DC00D8581B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 02816003133293DC00D8581B /* UILabel.h */;
+		name = "UILabel.h: 45";
+		rLen = 6;
+		rLoc = 1194;
+		rType = 0;
+		vrLen = 1450;
+		vrLoc = 694;
+	};
+	02816003133293DC00D8581B /* UILabel.h */ = {
+		isa = PBXFileReference;
+		name = UILabel.h;
+		path = /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UILabel.h;
+		sourceTree = "<absolute>";
+	};
+	02816005133293DC00D8581B /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* LastDay-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleIdentifier,
+		);
+		name = "/Users/malaar/Documents/iOS Projects/LastDay/LastDay-Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	028160181332970100D8581B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 02ED9519133171AE00D58A35 /* NewsRSSFeed.json */;
+		name = "NewsRSSFeed.json: 12";
+		rLen = 0;
+		rLoc = 256;
+		rType = 0;
+		vrLen = 303;
+		vrLoc = 0;
+	};
+	028160311332981500D8581B /* MYNewsRSSFeedController.mm:107 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 02ED94B9133169AD00D58A35 /* MYNewsRSSFeedController.mm */;
+		functionName = "-viewDidUnload";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 107;
+		location = LastDay;
+		modificationTime = 322085759.832239;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	0281606013329F1D00D8581B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 02ED94A51331559700D58A35 /* MYNewsRSSItem.h */;
+		name = "MYNewsRSSItem.h: 32";
+		rLen = 0;
+		rLoc = 783;
+		rType = 0;
+		vrLen = 654;
+		vrLoc = 136;
+	};
+	0281606213329F1D00D8581B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 027BA47B13317D5000409515 /* tinyxmlparser.mm */;
+		name = "tinyxmlparser.mm: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 993;
+		vrLoc = 0;
+	};
+	0281606313329F1D00D8581B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 027BA47A13317D5000409515 /* tinyxmlerror.mm */;
+		name = "tinyxmlerror.mm: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 973;
+		vrLoc = 0;
+	};
+	0281606413329F1D00D8581B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 027BA47713317D5000409515 /* tinystr.mm */;
+		name = "tinystr.mm: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 943;
+		vrLoc = 0;
+	};
+	0281606513329F1D00D8581B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 027BA47813317D5000409515 /* tinyxml.h */;
+		name = "tinyxml.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 973;
+		vrLoc = 0;
+	};
+	0281607A1332A05100D8581B /* MYNewsRSSFeedController.mm:204 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 02ED94B9133169AD00D58A35 /* MYNewsRSSFeedController.mm */;
+		functionName = "-connectionDidFinishLoading:";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 204;
+		location = LastDay;
+		modificationTime = 322085765.724819;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	0281608F1332A50C00D8581B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 027BA47913317D5000409515 /* tinyxml.mm */;
+		name = "tinyxml.mm: 1527";
+		rLen = 0;
+		rLoc = 31173;
+		rType = 0;
+		vrLen = 518;
+		vrLoc = 30936;
+	};
+	028160921332A56300D8581B /* MYNewsRSSDetailedController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {708, 326}}";
+			sepNavSelRange = "{404, 84}";
+			sepNavVisRange = "{0, 494}";
+		};
+	};
+	028160931332A56300D8581B /* MYNewsRSSDetailedController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {817, 1144}}";
+			sepNavSelRange = "{2525, 0}";
+			sepNavVisRange = "{1718, 814}";
+		};
+	};
+	028160A81332A8B500D8581B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 02ED94B8133169AD00D58A35 /* MYNewsRSSFeedController.h */;
+		name = "MYNewsRSSFeedController.h: 20";
+		rLen = 18;
+		rLoc = 505;
+		rType = 0;
+		vrLen = 606;
+		vrLoc = 0;
+	};
+	028160A91332A8B500D8581B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0274335C132FFECD00B63F5F /* MYRootController.m */;
+		name = "MYRootController.m: 84";
+		rLen = 0;
+		rLoc = 2614;
+		rType = 0;
+		vrLen = 708;
+		vrLoc = 2368;
+	};
+	028160E51332B22C00D8581B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 028160921332A56300D8581B /* MYNewsRSSDetailedController.h */;
+		name = "MYNewsRSSDetailedController.h: 21";
+		rLen = 84;
+		rLoc = 404;
+		rType = 0;
+		vrLen = 494;
+		vrLoc = 0;
+	};
+	028160F31332D86B00D8581B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0274335B132FFECD00B63F5F /* MYRootController.h */;
+		name = "MYRootController.h: 16";
+		rLen = 0;
+		rLoc = 281;
+		rType = 0;
+		vrLen = 387;
+		vrLoc = 0;
+	};
+	028160F41332D86B00D8581B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 027433C71330084800B63F5F /* MYThemeData.m */;
+		name = "MYThemeData.m: 34";
+		rLen = 93;
+		rLoc = 730;
+		rType = 0;
+		vrLen = 682;
+		vrLoc = 158;
+	};
+	028160F51332D86B00D8581B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0274341113301BD000B63F5F /* MYNewsRootController.h */;
+		name = "MYNewsRootController.h: 15";
+		rLen = 0;
+		rLoc = 249;
+		rType = 0;
+		vrLen = 321;
+		vrLoc = 0;
+	};
+	028160F61332D86B00D8581B /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 0274341213301BD000B63F5F /* MYNewsRootController.m */;
-		name = "MYNewsRootController.m: 81";
+		name = "MYNewsRootController.m: 25";
 		rLen = 0;
-		rLoc = 2191;
+		rLoc = 500;
 		rType = 0;
-		vrLen = 1094;
-		vrLoc = 1858;
+		vrLen = 1005;
+		vrLoc = 1952;
+	};
+	028160F71332D86B00D8581B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 02ED94A61331559700D58A35 /* MYNewsRSSItem.m */;
+		name = "MYNewsRSSItem.m: 19";
+		rLen = 0;
+		rLoc = 314;
+		rType = 0;
+		vrLen = 659;
+		vrLoc = 1252;
+	};
+	028160F81332D86B00D8581B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 02ED94B61331614300D58A35 /* MYNewsRSSFeed.m */;
+		name = "MYNewsRSSFeed.m: 41";
+		rLen = 0;
+		rLoc = 1052;
+		rType = 0;
+		vrLen = 665;
+		vrLoc = 0;
+	};
+	028160F91332D86B00D8581B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 02ED94B9133169AD00D58A35 /* MYNewsRSSFeedController.mm */;
+		name = "MYNewsRSSFeedController.mm: 93";
+		rLen = 0;
+		rLoc = 2511;
+		rType = 0;
+		vrLen = 863;
+		vrLoc = 5763;
+	};
+	028160FA1332D86B00D8581B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 028160931332A56300D8581B /* MYNewsRSSDetailedController.m */;
+		name = "MYNewsRSSDetailedController.m: 24";
+		rLen = 0;
+		rLoc = 621;
+		rType = 0;
+		vrLen = 705;
+		vrLoc = 191;
+	};
+	028160FB1332D86B00D8581B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 028160931332A56300D8581B /* MYNewsRSSDetailedController.m */;
+		name = "MYNewsRSSDetailedController.m: 84";
+		rLen = 0;
+		rLoc = 2525;
+		rType = 0;
+		vrLen = 814;
+		vrLoc = 1718;
 	};
 	02B6CDFF132ECA6400071735 /* LastDay */ = {
 		isa = PBXExecutable;
@@ -60,7 +386,7 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 1;
+		breakpointsEnabled = 0;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -139,18 +465,6 @@
 		vrLen = 356;
 		vrLoc = 0;
 	};
-	02CC54CA133026AB0051FE80 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* LastDay-Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-			CFBundleIdentifier,
-		);
-		name = "/Users/malaar/Documents/iOS Projects/LastDay/LastDay-Info.plist";
-		rLen = 0;
-		rLoc = 2147483647;
-	};
 	02ED94931331547D00D58A35 /* SBJsonTokeniser.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {572, 6409}}";
@@ -160,16 +474,16 @@
 	};
 	02ED94A51331559700D58A35 /* MYNewsRSSItem.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {755, 429}}";
-			sepNavSelRange = "{349, 62}";
-			sepNavVisRange = "{38, 637}";
+			sepNavIntBoundsRect = "{{0, 0}, {708, 455}}";
+			sepNavSelRange = "{783, 0}";
+			sepNavVisRange = "{136, 654}";
 		};
 	};
 	02ED94A61331559700D58A35 /* MYNewsRSSItem.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {708, 962}}";
-			sepNavSelRange = "{1299, 0}";
-			sepNavVisRange = "{796, 692}";
+			sepNavSelRange = "{314, 0}";
+			sepNavVisRange = "{1252, 659}";
 		};
 	};
 	02ED94B51331614300D58A35 /* MYNewsRSSFeed.h */ = {
@@ -183,32 +497,22 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {708, 689}}";
 			sepNavSelRange = "{1052, 0}";
-			sepNavVisRange = "{574, 819}";
+			sepNavVisRange = "{0, 665}";
 		};
 	};
 	02ED94B8133169AD00D58A35 /* MYNewsRSSFeedController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {708, 341}}";
-			sepNavSelRange = "{316, 4}";
-			sepNavVisRange = "{0, 425}";
+			sepNavIntBoundsRect = "{{0, 0}, {708, 364}}";
+			sepNavSelRange = "{505, 18}";
+			sepNavVisRange = "{0, 606}";
 		};
 	};
-	02ED94B9133169AD00D58A35 /* MYNewsRSSFeedController.m */ = {
+	02ED94B9133169AD00D58A35 /* MYNewsRSSFeedController.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {859, 1534}}";
-			sepNavSelRange = "{2789, 0}";
-			sepNavVisRange = "{0, 579}";
+			sepNavIntBoundsRect = "{{0, 0}, {656, 3172}}";
+			sepNavSelRange = "{959, 0}";
+			sepNavVisRange = "{789, 277}";
 		};
-	};
-	02ED94EF1331702000D58A35 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 02ED94A51331559700D58A35 /* MYNewsRSSItem.h */;
-		name = "MYNewsRSSItem.h: 22";
-		rLen = 62;
-		rLoc = 349;
-		rType = 0;
-		vrLen = 637;
-		vrLoc = 38;
 	};
 	02ED94F01331702000D58A35 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -220,140 +524,12 @@
 		vrLen = 487;
 		vrLoc = 3;
 	};
-	02ED94F11331702000D58A35 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 027433C71330084800B63F5F /* MYThemeData.m */;
-		name = "MYThemeData.m: 42";
-		rLen = 0;
-		rLoc = 899;
-		rType = 0;
-		vrLen = 709;
-		vrLoc = 475;
-	};
-	02ED94F21331702000D58A35 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 0274335B132FFECD00B63F5F /* MYRootController.h */;
-		name = "MYRootController.h: 16";
-		rLen = 0;
-		rLoc = 281;
-		rType = 0;
-		vrLen = 387;
-		vrLoc = 0;
-	};
-	02ED94F81331702000D58A35 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 02ED94A61331559700D58A35 /* MYNewsRSSItem.m */;
-		name = "MYNewsRSSItem.m: 49";
-		rLen = 0;
-		rLoc = 1299;
-		rType = 0;
-		vrLen = 692;
-		vrLoc = 796;
-	};
-	02ED94F91331702000D58A35 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 02ED94B61331614300D58A35 /* MYNewsRSSFeed.m */;
-		name = "MYNewsRSSFeed.m: 41";
-		rLen = 0;
-		rLoc = 1052;
-		rType = 0;
-		vrLen = 819;
-		vrLoc = 574;
-	};
-	02ED94FF1331704800D58A35 /* MYNewsRootController.m:25 */ = {
-		isa = PBXFileBreakpoint;
-		actions = (
-		);
-		breakpointStyle = 0;
-		continueAfterActions = 0;
-		countType = 0;
-		delayBeforeContinue = 0;
-		fileReference = 0274341213301BD000B63F5F /* MYNewsRootController.m */;
-		functionName = "-init";
-		hitCount = 0;
-		ignoreCount = 0;
-		lineNumber = 25;
-		location = LastDay;
-		modificationTime = 322010505.001906;
-		originalNumberOfMultipleMatches = 1;
-		state = 1;
-	};
 	02ED9519133171AE00D58A35 /* NewsRSSFeed.json */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {708, 341}}";
-			sepNavSelRange = "{130, 0}";
-			sepNavVisRange = "{0, 156}";
+			sepNavIntBoundsRect = "{{0, 0}, {708, 303}}";
+			sepNavSelRange = "{256, 0}";
+			sepNavVisRange = "{0, 303}";
 		};
-	};
-	02ED959013317AB600D58A35 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 02ED9519133171AE00D58A35 /* NewsRSSFeed.json */;
-		name = "NewsRSSFeed.json: 11";
-		rLen = 0;
-		rLoc = 130;
-		rType = 0;
-		vrLen = 156;
-		vrLoc = 0;
-	};
-	02ED959213317AB600D58A35 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 0274335C132FFECD00B63F5F /* MYRootController.m */;
-		name = "MYRootController.m: 49";
-		rLen = 1423;
-		rLoc = 1338;
-		rType = 0;
-		vrLen = 709;
-		vrLoc = 2368;
-	};
-	02ED959C13317BE300D58A35 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 02ED94B9133169AD00D58A35 /* MYNewsRSSFeedController.m */;
-		name = "MYNewsRSSFeedController.m: 108";
-		rLen = 0;
-		rLoc = 2789;
-		rType = 0;
-		vrLen = 579;
-		vrLoc = 0;
-	};
-	02ED959D13317BE300D58A35 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 02ED94B51331614300D58A35 /* MYNewsRSSFeed.h */;
-		name = "MYNewsRSSFeed.h: 11";
-		rLen = 0;
-		rLoc = 185;
-		rType = 0;
-		vrLen = 571;
-		vrLoc = 0;
-	};
-	02ED959E13317BE300D58A35 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 02ED94B8133169AD00D58A35 /* MYNewsRSSFeedController.h */;
-		name = "MYNewsRSSFeedController.h: 15";
-		rLen = 4;
-		rLoc = 316;
-		rType = 0;
-		vrLen = 425;
-		vrLoc = 0;
-	};
-	02ED959F13317BE300D58A35 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 0274341113301BD000B63F5F /* MYNewsRootController.h */;
-		name = "MYNewsRootController.h: 15";
-		rLen = 0;
-		rLoc = 249;
-		rType = 0;
-		vrLen = 321;
-		vrLoc = 0;
-	};
-	02ED95A913317C2800D58A35 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 0274341213301BD000B63F5F /* MYNewsRootController.m */;
-		name = "MYNewsRootController.m: 82";
-		rLen = 0;
-		rLoc = 2251;
-		rType = 0;
-		vrLen = 1099;
-		vrLoc = 1858;
 	};
 	1D3623240D0F684500981E51 /* LastDayAppDelegate.h */ = {
 		uiCtxt = {
@@ -383,7 +559,8 @@
 			1D6058900D05DD3D006BFB54 /* LastDay */,
 		);
 		breakpoints = (
-			02ED94FF1331704800D58A35 /* MYNewsRootController.m:25 */,
+			028160311332981500D8581B /* MYNewsRSSFeedController.mm:107 */,
+			0281607A1332A05100D8581B /* MYNewsRSSFeedController.mm:204 */,
 		);
 		codeSenseManager = 02B6CE13132ECA7600071735 /* Code sense */;
 		executables = (
@@ -450,29 +627,38 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 322010428;
-			PBXWorkspaceStateSaveDate = 322010428;
+			PBXPerProjectTemplateStateSaveDate = 322077395;
+			PBXWorkspaceStateSaveDate = 322077395;
 		};
 		perUserProjectItems = {
-			027BA49913317D9000409515 /* PBXTextBookmark */ = 027BA49913317D9000409515 /* PBXTextBookmark */;
+			02815FB1133289E600D8581B /* PBXTextBookmark */ = 02815FB1133289E600D8581B /* PBXTextBookmark */;
+			02815FDD1332903200D8581B /* PBXTextBookmark */ = 02815FDD1332903200D8581B /* PBXTextBookmark */;
+			02816002133293DC00D8581B /* PBXTextBookmark */ = 02816002133293DC00D8581B /* PBXTextBookmark */;
+			02816005133293DC00D8581B /* PlistBookmark */ = 02816005133293DC00D8581B /* PlistBookmark */;
+			028160181332970100D8581B /* PBXTextBookmark */ = 028160181332970100D8581B /* PBXTextBookmark */;
+			0281606013329F1D00D8581B /* PBXTextBookmark */ = 0281606013329F1D00D8581B /* PBXTextBookmark */;
+			0281606213329F1D00D8581B /* PBXTextBookmark */ = 0281606213329F1D00D8581B /* PBXTextBookmark */;
+			0281606313329F1D00D8581B /* PBXTextBookmark */ = 0281606313329F1D00D8581B /* PBXTextBookmark */;
+			0281606413329F1D00D8581B /* PBXTextBookmark */ = 0281606413329F1D00D8581B /* PBXTextBookmark */;
+			0281606513329F1D00D8581B /* PBXTextBookmark */ = 0281606513329F1D00D8581B /* PBXTextBookmark */;
+			0281608F1332A50C00D8581B /* PBXTextBookmark */ = 0281608F1332A50C00D8581B /* PBXTextBookmark */;
+			028160A81332A8B500D8581B /* PBXTextBookmark */ = 028160A81332A8B500D8581B /* PBXTextBookmark */;
+			028160A91332A8B500D8581B /* PBXTextBookmark */ = 028160A91332A8B500D8581B /* PBXTextBookmark */;
+			028160E51332B22C00D8581B /* PBXTextBookmark */ = 028160E51332B22C00D8581B /* PBXTextBookmark */;
+			028160F31332D86B00D8581B /* PBXTextBookmark */ = 028160F31332D86B00D8581B /* PBXTextBookmark */;
+			028160F41332D86B00D8581B /* PBXTextBookmark */ = 028160F41332D86B00D8581B /* PBXTextBookmark */;
+			028160F51332D86B00D8581B /* PBXTextBookmark */ = 028160F51332D86B00D8581B /* PBXTextBookmark */;
+			028160F61332D86B00D8581B /* PBXTextBookmark */ = 028160F61332D86B00D8581B /* PBXTextBookmark */;
+			028160F71332D86B00D8581B /* PBXTextBookmark */ = 028160F71332D86B00D8581B /* PBXTextBookmark */;
+			028160F81332D86B00D8581B /* PBXTextBookmark */ = 028160F81332D86B00D8581B /* PBXTextBookmark */;
+			028160F91332D86B00D8581B /* PBXTextBookmark */ = 028160F91332D86B00D8581B /* PBXTextBookmark */;
+			028160FA1332D86B00D8581B /* PBXTextBookmark */ = 028160FA1332D86B00D8581B /* PBXTextBookmark */;
+			028160FB1332D86B00D8581B /* PBXTextBookmark */ = 028160FB1332D86B00D8581B /* PBXTextBookmark */;
 			02CC54C2133026AB0051FE80 /* PBXTextBookmark */ = 02CC54C2133026AB0051FE80 /* PBXTextBookmark */;
 			02CC54C3133026AB0051FE80 /* PBXTextBookmark */ = 02CC54C3133026AB0051FE80 /* PBXTextBookmark */;
 			02CC54C8133026AB0051FE80 /* PBXTextBookmark */ = 02CC54C8133026AB0051FE80 /* PBXTextBookmark */;
 			02CC54C9133026AB0051FE80 /* PBXTextBookmark */ = 02CC54C9133026AB0051FE80 /* PBXTextBookmark */;
-			02CC54CA133026AB0051FE80 /* PlistBookmark */ = 02CC54CA133026AB0051FE80 /* PlistBookmark */;
-			02ED94EF1331702000D58A35 /* PBXTextBookmark */ = 02ED94EF1331702000D58A35 /* PBXTextBookmark */;
 			02ED94F01331702000D58A35 /* PBXTextBookmark */ = 02ED94F01331702000D58A35 /* PBXTextBookmark */;
-			02ED94F11331702000D58A35 /* PBXTextBookmark */ = 02ED94F11331702000D58A35 /* PBXTextBookmark */;
-			02ED94F21331702000D58A35 /* PBXTextBookmark */ = 02ED94F21331702000D58A35 /* PBXTextBookmark */;
-			02ED94F81331702000D58A35 /* PBXTextBookmark */ = 02ED94F81331702000D58A35 /* PBXTextBookmark */;
-			02ED94F91331702000D58A35 /* PBXTextBookmark */ = 02ED94F91331702000D58A35 /* PBXTextBookmark */;
-			02ED959013317AB600D58A35 /* PBXTextBookmark */ = 02ED959013317AB600D58A35 /* PBXTextBookmark */;
-			02ED959213317AB600D58A35 /* PBXTextBookmark */ = 02ED959213317AB600D58A35 /* PBXTextBookmark */;
-			02ED959C13317BE300D58A35 /* PBXTextBookmark */ = 02ED959C13317BE300D58A35 /* PBXTextBookmark */;
-			02ED959D13317BE300D58A35 /* PBXTextBookmark */ = 02ED959D13317BE300D58A35 /* PBXTextBookmark */;
-			02ED959E13317BE300D58A35 /* PBXTextBookmark */ = 02ED959E13317BE300D58A35 /* PBXTextBookmark */;
-			02ED959F13317BE300D58A35 /* PBXTextBookmark */ = 02ED959F13317BE300D58A35 /* PBXTextBookmark */;
-			02ED95A913317C2800D58A35 /* PBXTextBookmark */ = 02ED95A913317C2800D58A35 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 02B6CE12132ECA7600071735 /* Source Control */;
 		userBuildSettings = {
