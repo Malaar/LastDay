@@ -18,7 +18,7 @@
 	self = [super initWithStyle:UITableViewStyleGrouped];
 	
 	// navigation panel
-	[self.navigationItem setTitle: @"Root"];
+	[self.navigationItem setTitle: @"Themes"];
 	
 	// set themes
 	themeArray = [[NSMutableArray alloc] init];
@@ -80,6 +80,10 @@
 {
 	switch([indexPath section])
 	{
+		case 1:
+			//if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+				[self.navigationController pushViewController: [self photoController] animated: YES];
+			break;
 		case 3:
 			[self.navigationController pushViewController:[self newsController] animated:YES];
 			break;
@@ -105,16 +109,25 @@
 - (void)dealloc 
 {
 	[themeArray release];
+	[photoController release];
 	[newsController release];
     [super dealloc];
 }
 
+//==========================================================================================
+- (MYPhotoController*) photoController
+{
+	if(!photoController)
+		photoController = [[MYPhotoController alloc] init];
+	
+	return photoController;
+}
 
 //==========================================================================================
--(MYNewsRootController*) newsController
+-(MYNewsController*) newsController
 {
 	if(!newsController)
-		newsController = [[MYNewsRootController alloc] init];
+		newsController = [[MYNewsController alloc] init];
 	
 	return newsController;
 }

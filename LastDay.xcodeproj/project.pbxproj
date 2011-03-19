@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02607405133500E7000A16E6 /* MYPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02607403133500E7000A16E6 /* MYPhotoController.m */; };
+		02607406133500E7000A16E6 /* MYPhotoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02607404133500E7000A16E6 /* MYPhotoController.xib */; };
+		0260742013351222000A16E6 /* facebook-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0260741E13351222000A16E6 /* facebook-icon.png */; };
+		0260742113351222000A16E6 /* flickr_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0260741F13351222000A16E6 /* flickr_icon.png */; };
 		0274335D132FFECD00B63F5F /* MYRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0274335C132FFECD00B63F5F /* MYRootController.m */; };
 		027433C81330084800B63F5F /* MYThemeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 027433C71330084800B63F5F /* MYThemeData.m */; };
 		027433F613301A2200B63F5F /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 027433F013301A2200B63F5F /* camera.png */; };
@@ -14,7 +18,7 @@
 		027433F913301A2200B63F5F /* message.png in Resources */ = {isa = PBXBuildFile; fileRef = 027433F313301A2200B63F5F /* message.png */; };
 		027433FA13301A2200B63F5F /* news.png in Resources */ = {isa = PBXBuildFile; fileRef = 027433F413301A2200B63F5F /* news.png */; };
 		027433FB13301A2200B63F5F /* weather.png in Resources */ = {isa = PBXBuildFile; fileRef = 027433F513301A2200B63F5F /* weather.png */; };
-		0274341313301BD000B63F5F /* MYNewsRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0274341213301BD000B63F5F /* MYNewsRootController.m */; };
+		0274341313301BD000B63F5F /* MYNewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0274341213301BD000B63F5F /* MYNewsController.m */; };
 		027BA47C13317D5000409515 /* tinystr.mm in Sources */ = {isa = PBXBuildFile; fileRef = 027BA47713317D5000409515 /* tinystr.mm */; };
 		027BA47D13317D5000409515 /* tinyxml.mm in Sources */ = {isa = PBXBuildFile; fileRef = 027BA47913317D5000409515 /* tinyxml.mm */; };
 		027BA47E13317D5000409515 /* tinyxmlerror.mm in Sources */ = {isa = PBXBuildFile; fileRef = 027BA47A13317D5000409515 /* tinyxmlerror.mm */; };
@@ -59,6 +63,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		02607402133500E7000A16E6 /* MYPhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYPhotoController.h; sourceTree = "<group>"; };
+		02607403133500E7000A16E6 /* MYPhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYPhotoController.m; sourceTree = "<group>"; };
+		02607404133500E7000A16E6 /* MYPhotoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MYPhotoController.xib; path = Classes/MYPhotoController.xib; sourceTree = "<group>"; };
+		0260741E13351222000A16E6 /* facebook-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "facebook-icon.png"; path = "resources/facebook-icon.png"; sourceTree = SOURCE_ROOT; };
+		0260741F13351222000A16E6 /* flickr_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flickr_icon.png; path = resources/flickr_icon.png; sourceTree = SOURCE_ROOT; };
 		0274335B132FFECD00B63F5F /* MYRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MYRootController.h; path = Classes/MYRootController.h; sourceTree = SOURCE_ROOT; };
 		0274335C132FFECD00B63F5F /* MYRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MYRootController.m; path = Classes/MYRootController.m; sourceTree = SOURCE_ROOT; };
 		027433C61330084800B63F5F /* MYThemeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MYThemeData.h; path = Classes/MYThemeData.h; sourceTree = SOURCE_ROOT; };
@@ -68,8 +77,8 @@
 		027433F313301A2200B63F5F /* message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = message.png; sourceTree = "<group>"; };
 		027433F413301A2200B63F5F /* news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news.png; sourceTree = "<group>"; };
 		027433F513301A2200B63F5F /* weather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather.png; sourceTree = "<group>"; };
-		0274341113301BD000B63F5F /* MYNewsRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYNewsRootController.h; sourceTree = "<group>"; };
-		0274341213301BD000B63F5F /* MYNewsRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYNewsRootController.m; sourceTree = "<group>"; };
+		0274341113301BD000B63F5F /* MYNewsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYNewsController.h; sourceTree = "<group>"; };
+		0274341213301BD000B63F5F /* MYNewsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYNewsController.m; sourceTree = "<group>"; };
 		027BA47613317D5000409515 /* tinystr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tinystr.h; path = TinyXML/tinystr.h; sourceTree = SOURCE_ROOT; };
 		027BA47713317D5000409515 /* tinystr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = tinystr.mm; sourceTree = "<group>"; };
 		027BA47813317D5000409515 /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tinyxml.h; path = TinyXML/tinyxml.h; sourceTree = SOURCE_ROOT; };
@@ -136,6 +145,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02607401133500C6000A16E6 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				02607402133500E7000A16E6 /* MYPhotoController.h */,
+				02607403133500E7000A16E6 /* MYPhotoController.m */,
+			);
+			name = Photo;
+			sourceTree = "<group>";
+		};
 		027433EF13301A2200B63F5F /* ThemeImages */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,8 +209,8 @@
 		02ED94B41331612100D58A35 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				0274341113301BD000B63F5F /* MYNewsRootController.h */,
-				0274341213301BD000B63F5F /* MYNewsRootController.m */,
+				0274341113301BD000B63F5F /* MYNewsController.h */,
+				0274341213301BD000B63F5F /* MYNewsController.m */,
 				02ED94A51331559700D58A35 /* MYNewsRSSItem.h */,
 				02ED94A61331559700D58A35 /* MYNewsRSSItem.m */,
 				02ED94B51331614300D58A35 /* MYNewsRSSFeed.h */,
@@ -209,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				028160941332A56300D8581B /* MYNewsRSSDetailedController.xib */,
+				02607404133500E7000A16E6 /* MYPhotoController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 			);
 			name = NIB;
@@ -217,6 +236,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				02607401133500C6000A16E6 /* Photo */,
 				02ED94B41331612100D58A35 /* News */,
 				1D3623240D0F684500981E51 /* LastDayAppDelegate.h */,
 				1D3623250D0F684500981E51 /* LastDayAppDelegate.m */,
@@ -262,6 +282,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0260741E13351222000A16E6 /* facebook-icon.png */,
+				0260741F13351222000A16E6 /* flickr_icon.png */,
 				02ED94E013316DD500D58A35 /* NIB */,
 				027433EF13301A2200B63F5F /* ThemeImages */,
 				02CC54BA133026630051FE80 /* Icon.png */,
@@ -344,6 +366,9 @@
 				02CC54BD133026630051FE80 /* Icon@2x.png in Resources */,
 				02ED951A133171AE00D58A35 /* NewsRSSFeed.json in Resources */,
 				028160961332A56300D8581B /* MYNewsRSSDetailedController.xib in Resources */,
+				02607406133500E7000A16E6 /* MYPhotoController.xib in Resources */,
+				0260742013351222000A16E6 /* facebook-icon.png in Resources */,
+				0260742113351222000A16E6 /* flickr_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,7 +384,7 @@
 				28193060112F816700ECF9B4 /* LastDay.xcdatamodeld in Sources */,
 				0274335D132FFECD00B63F5F /* MYRootController.m in Sources */,
 				027433C81330084800B63F5F /* MYThemeData.m in Sources */,
-				0274341313301BD000B63F5F /* MYNewsRootController.m in Sources */,
+				0274341313301BD000B63F5F /* MYNewsController.m in Sources */,
 				02ED94961331547D00D58A35 /* NSObject+JSON.m in Sources */,
 				02ED94971331547D00D58A35 /* SBJsonParser.m in Sources */,
 				02ED94981331547D00D58A35 /* SBJsonStreamParser.m in Sources */,
@@ -377,6 +402,7 @@
 				027BA47E13317D5000409515 /* tinyxmlerror.mm in Sources */,
 				027BA47F13317D5000409515 /* tinyxmlparser.mm in Sources */,
 				028160951332A56300D8581B /* MYNewsRSSDetailedController.m in Sources */,
+				02607405133500E7000A16E6 /* MYPhotoController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

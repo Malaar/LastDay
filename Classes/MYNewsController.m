@@ -6,12 +6,12 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "MYNewsRootController.h"
+#import "MYNewsController.h"
 #import "JSON.h"
 #import "MYNewsRSSFeed.h"
 #import "MYNewsRSSFeedController.h"
 
-@implementation MYNewsRootController
+@implementation MYNewsController
 
 //==========================================================================================
 - (id) init
