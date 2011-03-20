@@ -25,6 +25,11 @@
 		027BA47F13317D5000409515 /* tinyxmlparser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 027BA47B13317D5000409515 /* tinyxmlparser.mm */; };
 		028160951332A56300D8581B /* MYNewsRSSDetailedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 028160931332A56300D8581B /* MYNewsRSSDetailedController.m */; };
 		028160961332A56300D8581B /* MYNewsRSSDetailedController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 028160941332A56300D8581B /* MYNewsRSSDetailedController.xib */; };
+		0294E2DF133686D50034C040 /* MYMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294E2DE133686D50034C040 /* MYMessageController.m */; };
+		0294E2E3133688C50034C040 /* MYMessageOwn.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294E2E1133688C50034C040 /* MYMessageOwn.m */; };
+		0294E2E4133688C50034C040 /* MYMessageOwn.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0294E2E2133688C50034C040 /* MYMessageOwn.xib */; };
+		0294E39413369D9C0034C040 /* MYMessagesTemplatesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0294E39313369D9C0034C040 /* MYMessagesTemplatesController.m */; };
+		0294E3D51336A3960034C040 /* MYMessagesTemplatesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0294E3D41336A3960034C040 /* MYMessagesTemplatesController.xib */; };
 		02CC54BC133026630051FE80 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 02CC54BA133026630051FE80 /* Icon.png */; };
 		02CC54BD133026630051FE80 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02CC54BB133026630051FE80 /* Icon@2x.png */; };
 		02ED94961331547D00D58A35 /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ED94851331547D00D58A35 /* NSObject+JSON.m */; };
@@ -88,6 +93,14 @@
 		028160921332A56300D8581B /* MYNewsRSSDetailedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYNewsRSSDetailedController.h; sourceTree = "<group>"; };
 		028160931332A56300D8581B /* MYNewsRSSDetailedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYNewsRSSDetailedController.m; sourceTree = "<group>"; };
 		028160941332A56300D8581B /* MYNewsRSSDetailedController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MYNewsRSSDetailedController.xib; path = Classes/MYNewsRSSDetailedController.xib; sourceTree = "<group>"; };
+		0294E2DD133686D50034C040 /* MYMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMessageController.h; sourceTree = "<group>"; };
+		0294E2DE133686D50034C040 /* MYMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYMessageController.m; sourceTree = "<group>"; };
+		0294E2E0133688C50034C040 /* MYMessageOwn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMessageOwn.h; sourceTree = "<group>"; };
+		0294E2E1133688C50034C040 /* MYMessageOwn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYMessageOwn.m; sourceTree = "<group>"; };
+		0294E2E2133688C50034C040 /* MYMessageOwn.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MYMessageOwn.xib; path = Classes/MYMessageOwn.xib; sourceTree = "<group>"; };
+		0294E39213369D9C0034C040 /* MYMessagesTemplatesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMessagesTemplatesController.h; sourceTree = "<group>"; };
+		0294E39313369D9C0034C040 /* MYMessagesTemplatesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYMessagesTemplatesController.m; sourceTree = "<group>"; };
+		0294E3D41336A3960034C040 /* MYMessagesTemplatesController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MYMessagesTemplatesController.xib; path = Classes/MYMessagesTemplatesController.xib; sourceTree = "<group>"; };
 		02CC54BA133026630051FE80 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = resources/Icon.png; sourceTree = SOURCE_ROOT; };
 		02CC54BB133026630051FE80 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "resources/Icon@2x.png"; sourceTree = SOURCE_ROOT; };
 		02ED94831331547D00D58A35 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSON.h; path = JSONFramework/JSON.h; sourceTree = SOURCE_ROOT; };
@@ -180,6 +193,19 @@
 			path = TinyXML;
 			sourceTree = SOURCE_ROOT;
 		};
+		0294E2DC133686B30034C040 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				0294E2DD133686D50034C040 /* MYMessageController.h */,
+				0294E2DE133686D50034C040 /* MYMessageController.m */,
+				0294E2E0133688C50034C040 /* MYMessageOwn.h */,
+				0294E2E1133688C50034C040 /* MYMessageOwn.m */,
+				0294E39213369D9C0034C040 /* MYMessagesTemplatesController.h */,
+				0294E39313369D9C0034C040 /* MYMessagesTemplatesController.m */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
 		02ED94821331547D00D58A35 /* JSONFramework */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +252,8 @@
 		02ED94E013316DD500D58A35 /* NIB */ = {
 			isa = PBXGroup;
 			children = (
+				0294E2E2133688C50034C040 /* MYMessageOwn.xib */,
+				0294E3D41336A3960034C040 /* MYMessagesTemplatesController.xib */,
 				028160941332A56300D8581B /* MYNewsRSSDetailedController.xib */,
 				02607404133500E7000A16E6 /* MYPhotoController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
@@ -236,6 +264,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0294E2DC133686B30034C040 /* Messages */,
 				02607401133500C6000A16E6 /* Photo */,
 				02ED94B41331612100D58A35 /* News */,
 				1D3623240D0F684500981E51 /* LastDayAppDelegate.h */,
@@ -369,6 +398,8 @@
 				02607406133500E7000A16E6 /* MYPhotoController.xib in Resources */,
 				0260742013351222000A16E6 /* facebook-icon.png in Resources */,
 				0260742113351222000A16E6 /* flickr_icon.png in Resources */,
+				0294E2E4133688C50034C040 /* MYMessageOwn.xib in Resources */,
+				0294E3D51336A3960034C040 /* MYMessagesTemplatesController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +434,9 @@
 				027BA47F13317D5000409515 /* tinyxmlparser.mm in Sources */,
 				028160951332A56300D8581B /* MYNewsRSSDetailedController.m in Sources */,
 				02607405133500E7000A16E6 /* MYPhotoController.m in Sources */,
+				0294E2DF133686D50034C040 /* MYMessageController.m in Sources */,
+				0294E2E3133688C50034C040 /* MYMessageOwn.m in Sources */,
+				0294E39413369D9C0034C040 /* MYMessagesTemplatesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

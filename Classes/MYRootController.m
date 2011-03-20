@@ -84,6 +84,9 @@
 			//if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
 				[self.navigationController pushViewController: [self photoController] animated: YES];
 			break;
+		case 2:
+			[self.navigationController pushViewController:[self messageController] animated:YES];
+			break;
 		case 3:
 			[self.navigationController pushViewController:[self newsController] animated:YES];
 			break;
@@ -112,6 +115,15 @@
 	[photoController release];
 	[newsController release];
     [super dealloc];
+}
+
+//==========================================================================================
+- (MYMessageController*) messageController
+{
+	if(!messageController)
+		messageController = [[MYMessageController alloc] init];
+	
+	return messageController;
 }
 
 //==========================================================================================

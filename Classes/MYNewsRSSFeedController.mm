@@ -72,8 +72,10 @@
 	if(!cell)
 	{
 		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID] autorelease];
-		[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+		[cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
 	}
+	
+	cell.textLabel.font = [UIFont boldSystemFontOfSize:13];
 	
 	MYNewsRSSItem* rssItem = [news objectAtIndex:[indexPath row]];
 	[cell.textLabel setText: rssItem.title];

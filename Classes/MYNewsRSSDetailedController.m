@@ -20,7 +20,7 @@
 	{
 		[self setTitle:@"Detailed news"];
 		
-		UIBarButtonItem* bbi = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks
+		UIBarButtonItem* bbi = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
 																			 target:self
 																			 action:@selector(commentNews)]
 								autorelease];
@@ -33,6 +33,8 @@
 - (void) viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
+	textView.editable = FALSE;
+	
 	NSMutableString* detailedStr = [NSMutableString stringWithString: rssItem.description];
 	[detailedStr appendString:@"\n\n"];
 	[detailedStr appendString: rssItem.pubDate];

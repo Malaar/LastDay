@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MYMessageController.h"
 #import "MYPhotoController.h"
 #import "MYNewsController.h"
 
@@ -16,10 +17,12 @@
 	NSMutableArray* themeArray;
 
 	// controllers
+	MYMessageController* messageController;
 	MYPhotoController* photoController;
 	MYNewsController* newsController;
 }
 
+- (MYMessageController*) messageController;
 - (MYPhotoController*) photoController;
 -(MYNewsController*) newsController;
 
