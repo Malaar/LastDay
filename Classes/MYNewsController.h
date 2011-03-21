@@ -16,4 +16,6 @@
 
 - (NSMutableArray*) getRSSFeeds; ///< load rss feeds from json
 
+- (void) reloadRSSFeed;			///< reload rss feed in current rssFeedController
+
 @end

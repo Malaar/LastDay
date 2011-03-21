@@ -38,14 +38,15 @@
 	return self;
 }
 
-
 //==========================================================================================
 - (void) viewWillAppear: (BOOL)animated
 {
 	[super viewWillAppear:animated];
-	[self loadRssFeed];
+	if(!news)
+		[self loadRssFeed];
 }
 
+//==========================================================================================
 - (void) viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
@@ -77,9 +78,13 @@
 	
 	cell.textLabel.font = [UIFont boldSystemFontOfSize:13];
 	
-	MYNewsRSSItem* rssItem = [news objectAtIndex:[indexPath row]];
-	[cell.textLabel setText: rssItem.title];
-	[cell.detailTextLabel setText: rssItem.pubDate];
+	if([indexPath row] < [news count])
+	{
+		MYNewsRSSItem* rssItem = [news objectAtIndex:[indexPath row]];
+		[cell.textLabel setText: rssItem.title];
+		[cell.detailTextLabel setText: rssItem.pubDate];
+	}
+
 	return cell;
 }
 

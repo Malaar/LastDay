@@ -7,7 +7,8 @@
 //
 
 #import "MYMessageOwn.h"
-
+#import "SHKFacebook.h"
+#import "SHKTwitter.h"
 
 @implementation MYMessageOwn
 
@@ -99,6 +100,15 @@
 	[tvMessage resignFirstResponder];
 	// let's send message
 	// ...
+	if([tvMessage.text length])
+	{
+		UIActionSheet* sendSheet = [[UIActionSheet alloc] initWithTitle:@"Send To"
+															   delegate:self
+													  cancelButtonTitle:@"Cancel"
+												 destructiveButtonTitle:nil
+													  otherButtonTitles:@"Facebook", @"Twitter", nil];
+		[sendSheet showInView:self.view.window];
+	}
 }
 
 //==========================================================================================
@@ -106,6 +116,23 @@
 {
 	[tvMessage resignFirstResponder];
 	tvMessage.text = nil;
+}
+
+//==========================================================================================
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	if(buttonIndex > 1) return;
+	
+	SHKItem* textItem = [SHKItem text: tvMessage.text];
+	
+	if(buttonIndex == 0)
+	{
+		[SHKFacebook shareItem:textItem];
+	}
+	else if(buttonIndex == 1)
+	{
+		[SHKTwitter shareItem:textItem];
+	}
 }
 
 //==========================================================================================

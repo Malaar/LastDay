@@ -46,9 +46,13 @@
 {
 	[super viewDidLoad];
 	
-	UIImage* image = [UIImage imageNamed:@"news.png"];
-	UIImageView* view = [[[UIImageView alloc] initWithImage:image] autorelease];
-	UIBarButtonItem* bbi = [[[UIBarButtonItem alloc] initWithCustomView:view] autorelease];
+	//UIImage* image = [UIImage imageNamed:@"news.png"];
+	//UIImageView* view = [[[UIImageView alloc] initWithImage:image] autorelease];
+	//UIBarButtonItem* bbi = [[[UIBarButtonItem alloc] initWithCustomView:view] autorelease];
+
+	UIBarButtonItem* bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+																		 target:self
+																		 action:@selector(reloadRSSFeed)];
 	self.navigationItem.rightBarButtonItem = bbi;
 }
 
@@ -89,6 +93,14 @@
 		[feeds addObject:rssFeed];
 	}
 	return feeds;
+}
+
+
+//==========================================================================================
+// reload rss feed in current rssFeedController
+- (void) reloadRSSFeed
+{
+	[((MYNewsRSSFeedController*)[self selectedViewController]) loadRssFeed];
 }
 
 //==========================================================================================
