@@ -81,7 +81,7 @@
 	switch([indexPath section])
 	{
 		case 1:
-			//if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+			if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
 				[self.navigationController pushViewController: [self photoController] animated: YES];
 			break;
 		case 2:

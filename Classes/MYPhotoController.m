@@ -32,7 +32,7 @@
 		image = nil;
 	}
 	
-	/*
+	//*
 	UIImagePickerController* imagePicker = [[[UIImagePickerController alloc] init] autorelease];
 	[imagePicker setDelegate: self];
 	imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;

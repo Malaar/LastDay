@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface MYMessageOwn : UIViewController <UIActionSheetDelegate>
+@interface MYMessageOwn : UIViewController
 {
 	IBOutlet UITextView* tvMessage;		///< textView for new sending message
 	IBOutlet UIToolbar* toolBar;		///< tool bar...

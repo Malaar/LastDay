@@ -7,8 +7,7 @@
 //
 
 #import "MYMessageOwn.h"
-#import "SHKFacebook.h"
-#import "SHKTwitter.h"
+#import "MYMessageSender.h"
 
 @implementation MYMessageOwn
 
@@ -97,17 +96,16 @@
 //==========================================================================================
 - (void) sendMessage
 {
-	[tvMessage resignFirstResponder];
-	// let's send message
-	// ...
-	if([tvMessage.text length])
+	// let's try to send message
+	NSString* checkText = [tvMessage.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+	if([checkText length])
 	{
-		UIActionSheet* sendSheet = [[UIActionSheet alloc] initWithTitle:@"Send To"
-															   delegate:self
-													  cancelButtonTitle:@"Cancel"
-												 destructiveButtonTitle:nil
-													  otherButtonTitles:@"Facebook", @"Twitter", nil];
-		[sendSheet showInView:self.view.window];
+		[tvMessage resignFirstResponder];
+		[[MYMessageSender sharedMessageSender] sendMessage:tvMessage.text showInView:self.view];
+	}
+	else
+	{
+		tvMessage.text = nil;
 	}
 }
 
@@ -116,23 +114,6 @@
 {
 	[tvMessage resignFirstResponder];
 	tvMessage.text = nil;
-}
-
-//==========================================================================================
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-	if(buttonIndex > 1) return;
-	
-	SHKItem* textItem = [SHKItem text: tvMessage.text];
-	
-	if(buttonIndex == 0)
-	{
-		[SHKFacebook shareItem:textItem];
-	}
-	else if(buttonIndex == 1)
-	{
-		[SHKTwitter shareItem:textItem];
-	}
 }
 
 //==========================================================================================

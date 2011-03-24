@@ -35,10 +35,12 @@
 {
 	[super viewDidLoad];
 	
+	/*
 	UIImage* image = [UIImage imageNamed:@"message.png"];
 	UIImageView* view = [[[UIImageView alloc] initWithImage:image] autorelease];
 	UIBarButtonItem* bbi = [[[UIBarButtonItem alloc] initWithCustomView:view] autorelease];
 	self.navigationItem.rightBarButtonItem = bbi;
+	//*/
 }
 
 
