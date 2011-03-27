@@ -144,6 +144,7 @@
 		[rssConnection release];
 	}
 	
+	self.tableView.scrollEnabled = false;
 	// make connection and request
 	NSURLRequest* request = [[NSURLRequest alloc] initWithURL:rssFeed.url
 												  cachePolicy:NSURLRequestReloadIgnoringCacheData
@@ -217,6 +218,7 @@
 	}
 	
 	[self.tableView reloadData];
+	self.tableView.scrollEnabled = true;
 }
 
 //==========================================================================================

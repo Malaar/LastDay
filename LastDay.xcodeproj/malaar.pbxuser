@@ -1,5 +1,15 @@
 // !$*UTF8*$!
 {
+	021B6E4A133FD6FF001DC9B2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 02ED94B9133169AD00D58A35 /* MYNewsRSSFeedController.mm */;
+		name = "MYNewsRSSFeedController.mm: 147";
+		rLen = 0;
+		rLoc = 3763;
+		rType = 0;
+		vrLen = 1021;
+		vrLoc = 3102;
+	};
 	025318B6133554FB00D2A5D2 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 02ED94B51331614300D58A35 /* MYNewsRSSFeed.h */;
@@ -316,16 +326,6 @@
 		vrLen = 1154;
 		vrLoc = 190;
 	};
-	02710509133FD53800056C2F /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 02ED94B9133169AD00D58A35 /* MYNewsRSSFeedController.mm */;
-		name = "MYNewsRSSFeedController.mm: 132";
-		rLen = 20;
-		rLoc = 3480;
-		rType = 0;
-		vrLen = 1015;
-		vrLoc = 708;
-	};
 	0271050A133FD53800056C2F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 02ED94B9133169AD00D58A35 /* MYNewsRSSFeedController.mm */;
@@ -503,11 +503,6 @@
 		name = MYMessageDetailedController.m;
 		path = "/Users/malaar/Documents/iOS Projects/LastDay/Classes/MYMessageDetailedController.m";
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {866, 1599}}";
-			sepNavSelRange = "{2367, 0}";
-			sepNavVisRange = "{39, 1106}";
-		};
 	};
 	027BA47613317D5000409515 /* tinystr.h */ = {
 		uiCtxt = {
@@ -911,9 +906,9 @@
 	};
 	02ED94B9133169AD00D58A35 /* MYNewsRSSFeedController.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {859, 3211}}";
-			sepNavSelRange = "{2575, 1}";
-			sepNavVisRange = "{1483, 1472}";
+			sepNavIntBoundsRect = "{{0, 0}, {859, 3055}}";
+			sepNavSelRange = "{3763, 0}";
+			sepNavVisRange = "{3102, 1021}";
 		};
 	};
 	02ED9519133171AE00D58A35 /* NewsRSSFeed.json */ = {
@@ -1097,10 +1092,11 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 322920639;
-			PBXWorkspaceStateSaveDate = 322920639;
+			PBXPerProjectTemplateStateSaveDate = 322950749;
+			PBXWorkspaceStateSaveDate = 322950749;
 		};
 		perUserProjectItems = {
+			021B6E4A133FD6FF001DC9B2 /* PBXTextBookmark */ = 021B6E4A133FD6FF001DC9B2 /* PBXTextBookmark */;
 			025318B6133554FB00D2A5D2 /* PBXTextBookmark */ = 025318B6133554FB00D2A5D2 /* PBXTextBookmark */;
 			02607432133515B6000A16E6 /* PBXTextBookmark */ = 02607432133515B6000A16E6 /* PBXTextBookmark */;
 			02607434133515B6000A16E6 /* PBXTextBookmark */ = 02607434133515B6000A16E6 /* PBXTextBookmark */;
@@ -1131,7 +1127,6 @@
 			02710506133FD53800056C2F /* PBXTextBookmark */ = 02710506133FD53800056C2F /* PBXTextBookmark */;
 			02710507133FD53800056C2F /* PBXTextBookmark */ = 02710507133FD53800056C2F /* PBXTextBookmark */;
 			02710508133FD53800056C2F /* PBXTextBookmark */ = 02710508133FD53800056C2F /* PBXTextBookmark */;
-			02710509133FD53800056C2F /* PBXTextBookmark */ = 02710509133FD53800056C2F /* PBXTextBookmark */;
 			0271050A133FD53800056C2F /* PBXTextBookmark */ = 0271050A133FD53800056C2F /* PBXTextBookmark */;
 			0274AD70133803A100D156F7 /* PBXBookmark */ = 0274AD70133803A100D156F7 /* PBXBookmark */;
 			0274AEAC13380EDC00D156F7 /* PBXTextBookmark */ = 0274AEAC13380EDC00D156F7 /* PBXTextBookmark */;
