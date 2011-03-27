@@ -14,8 +14,8 @@
 // App Description
 // These values are used by any service that shows 'shared from XYZ'
 
-#define SHKMyAppName			@"KankayDeliciousTest_001"
-#define SHKMyAppURL				@""
+#define SHKMyAppName			@"KankayAppiPhone_002"
+#define SHKMyAppURL				@"http://www.getsharekit.com/"
 
 
 
@@ -46,8 +46,8 @@
 // If SHKFacebookUseSessionProxy is enabled then SHKFacebookSecret is ignored and should be left blank
 
 #define SHKFacebookUseSessionProxy  NO 
-#define SHKFacebookKey				@"5f35ba316d91bd90e60388522ee2cf27"
-#define SHKFacebookSecret			@"3a02ac2332befb94d9f2abd65cb63c5b"
+#define SHKFacebookKey				@"363bd55b70765b2908c0821c3257e6c2"
+#define SHKFacebookSecret			@"918476f6e084477fc226c653e9b57f0b"
 #define SHKFacebookSessionProxyURL  @""
 
 // Read It Later - http://readitlaterlist.com/api/?shk
@@ -140,12 +140,12 @@
  */
 
 // A : show debug output
-//#define SHKDebugShowLogs			1
-//#define SHKLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#define SHKDebugShowLogs			1
+#define SHKLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
 
 // B : hide debug output
-#define SHKDebugShowLogs			0
-#define SHKLog( s, ... ) 
+//#define SHKDebugShowLogs			0
+//#define SHKLog( s, ... ) 
 
 
 

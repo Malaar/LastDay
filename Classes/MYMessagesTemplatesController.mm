@@ -52,14 +52,11 @@
 	
 	UIBarButtonItem* bbi;
 
-	// item: send 
-	bbi = [[[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStyleDone
-										   target:self
-										   action:@selector(sendMessage)] autorelease];
-//	bbi = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
-//														target:self
-//														 action:@selector(sendMessage)] autorelease];
-	[[[self parentViewController] navigationItem] setRightBarButtonItem:bbi];
+//	// item: send 
+//	bbi = [[[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStyleDone
+//										   target:self
+//										   action:@selector(sendMessage)] autorelease];
+//	[[[self parentViewController] navigationItem] setRightBarButtonItem:bbi];
 	
 	// add items to the toolbar
 	NSMutableArray* toolBarItems = [NSMutableArray arrayWithCapacity:6];
@@ -103,6 +100,12 @@
 //==========================================================================================
 - (void) viewWillAppear:(BOOL)animated
 {
+	// item: send 
+	UIBarButtonItem* bbi = [[[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStyleDone
+										   target:self
+										   action:@selector(sendMessage)] autorelease];
+	[[[self parentViewController] navigationItem] setRightBarButtonItem:bbi];
+
 	[super viewWillAppear:animated];
 	
 	if(appearType == MYMessagesTemplatesControllerAppearTypeAfterAdd)
@@ -124,7 +127,8 @@
 		}
 	}
 	
-	editedIndex = -1;
+	appearType = MYMessagesTemplatesControllerAppearTypeNone;
+	editedIndex = (NSUInteger)-1;
 }
 
 //==========================================================================================
