@@ -83,12 +83,9 @@ static const int twitterLettersLimit = 140;
 	NSString* checkText = [tvMessage.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 	if([checkText length])
 	{
-		needSave = [messageText length];
-		if(needSave)
-		{
-			self.messageText = tvMessage.text;
-			[self.navigationController popViewControllerAnimated:YES];
-		}
+		self.messageText = tvMessage.text;
+		needSave = TRUE;
+		[self.navigationController popViewControllerAnimated:YES];
 	}
 }
 

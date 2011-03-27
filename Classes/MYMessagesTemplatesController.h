@@ -19,15 +19,17 @@ typedef enum MYMessagesTemplatesControllerAppearType MYMessagesTemplatesControll
 
 
 @interface MYMessagesTemplatesController : UIViewController
-											<UITableViewDelegate, UITableViewDataSource>
+											<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 {
 	MYMessageDetailedController* messageDetailedController;
 	IBOutlet UIToolbar* toolBar;
 	IBOutlet UITableView* messagesTableView;
-	//NSIndexPath* selectedPath;
+	IBOutlet UISearchBar* searchBar;
 	NSMutableArray* messages;
+	NSArray* filteredMessages;
 	UIBarButtonItem* editButton;
 	NSUInteger editedIndex;
+	BOOL searching;
 	
 	MYMessagesTemplatesControllerAppearType appearType;
 }
@@ -42,6 +44,7 @@ typedef enum MYMessagesTemplatesControllerAppearType MYMessagesTemplatesControll
 - (void) editMessagesTable;
 
 - (void) deselectRow;
+- (void) cancelSearching;
 
 - (void) needSaveNotification: (NSNotification*) notification;
 

@@ -34,6 +34,7 @@
 		
 		//
 		appearType = MYMessagesTemplatesControllerAppearTypeNone;
+		searching = FALSE;
 	}
 	
 	return self;
@@ -46,10 +47,22 @@
 
 	[messagesTableView setDelegate:self];
 	[messagesTableView setDataSource:self];
-	
-	NSMutableArray* toolBarItems = [NSMutableArray arrayWithCapacity:3];
+	[searchBar setDelegate:self];
+	searchBar.showsCancelButton = TRUE;
 	
 	UIBarButtonItem* bbi;
+
+	// item: send 
+	bbi = [[[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStyleDone
+										   target:self
+										   action:@selector(sendMessage)] autorelease];
+//	bbi = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+//														target:self
+//														 action:@selector(sendMessage)] autorelease];
+	[[[self parentViewController] navigationItem] setRightBarButtonItem:bbi];
+	
+	// add items to the toolbar
+	NSMutableArray* toolBarItems = [NSMutableArray arrayWithCapacity:6];
 
 	// item: space
 	bbi = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
@@ -69,18 +82,7 @@
 														 action:nil] autorelease];
 	[toolBarItems addObject:bbi];
 	
-	// item: send 
-	bbi = [[[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStyleDone
-										   target:self
-										   action:@selector(sendMessage)] autorelease];
-	[toolBarItems addObject: bbi];
-	
-	// item: space
-	bbi = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-														 target:nil
-														 action:nil] autorelease];
-	[toolBarItems addObject:bbi];
-	
+
 	// item: edit 
 	bbi = [[[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStyleBordered
 										   target:self
@@ -131,6 +133,7 @@
 	[super viewWillDisappear:animated];
 	
 	[self deselectRow];
+	[self cancelSearching];
 }
 
 //==========================================================================================
@@ -142,6 +145,8 @@
 	toolBar = nil;
 	[messagesTableView release];
 	messagesTableView = nil;
+	[searchBar release];
+	searchBar = nil;
 	[self deselectRow];
 }
 
@@ -157,14 +162,17 @@
 	[messageDetailedController release];
 	[toolBar release];
 	[messagesTableView release];
+	[searchBar release];
 	[messages release];
+	[filteredMessages release];
     [super dealloc];
 }
 
 //==========================================================================================
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return [messages count];
+	NSArray* source = (searching) ? (filteredMessages) : (messages);
+	return [source count];
 }
 
 //==========================================================================================
@@ -175,20 +183,13 @@
 	if(!cell)
 	{
 		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID] autorelease];
-
-		/*
-		UIButton* btnAccessory = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		CGRect frame = CGRectMake(0, 0, 75, 25);
-		btnAccessory.frame = frame;
-		[btnAccessory setTitle:@"Send" forState:UIControlStateNormal];
-		[btnAccessory addTarget:self action:nil forControlEvents:UIControlEventTouchUpInside];
-		[cell setAccessoryView:btnAccessory];
-		//*/
 		[cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];//DisclosureIndicator];
 	}
 	
+	NSArray* source = (searching) ? (filteredMessages) : (messages);
+	
 	//cell.textLabel.font = [UIFont boldSystemFontOfSize:13];
-	NSString* templateMessage = [messages objectAtIndex: [indexPath row]];
+	NSString* templateMessage = [source objectAtIndex: [indexPath row]];
 	[cell.textLabel setText: templateMessage];
 
 	return cell;
@@ -198,8 +199,8 @@
 //==========================================================================================
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	selectedPath = indexPath;
-	[selectedPath retain];
+	if(searching)
+		[self cancelSearching];
 }
 //*/
 
@@ -234,8 +235,10 @@
 	if(!selectedPath) return;
 	
 	[self deselectRow];
+	[self cancelSearching];
 	// let's send message
-	NSString* messageText = [messages objectAtIndex: [selectedPath row]];
+	NSArray* source = (searching) ? (filteredMessages) : (messages);
+	NSString* messageText = [source objectAtIndex: [selectedPath row]];
 	
 	if([messageText length])
 	{
@@ -358,6 +361,47 @@
 		messageDetailedController = [[MYMessageDetailedController alloc] init];
 	
 	return messageDetailedController;
+}
+
+//==========================================================================================
+- (void)searchBarCancelButtonClicked:(UISearchBar *)aSearchBar
+{
+	[self cancelSearching];
+}
+
+//==========================================================================================
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+	//searching = YES;
+}
+
+//==========================================================================================
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+	if( [searchText length] )
+	{
+		searching = YES;
+		
+		if(filteredMessages)
+			[filteredMessages release];
+		NSPredicate* predicate = [NSPredicate predicateWithFormat:@"(SELF contains[cd] %@)", searchText];
+		filteredMessages = [messages filteredArrayUsingPredicate:predicate];
+		[filteredMessages retain];
+	}
+	else
+	{
+		searching = NO;
+	}
+
+	[messagesTableView reloadData];
+}
+
+//==========================================================================================
+- (void) cancelSearching
+{
+	searching = NO;
+	searchBar.text = @"";
+	[searchBar resignFirstResponder];
 }
 
 //==========================================================================================
