@@ -51,7 +51,7 @@ static MYMessageSender* sharedSender;
 	if(buttonIndex > 1) return;	// only two button and third - cancel
 	
 	SHKItem* textItem = [SHKItem text: text];
-	
+
 	if(buttonIndex == 0)
 	{
 		[SHKFacebook shareItem:textItem];

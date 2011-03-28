@@ -34,17 +34,17 @@
 														action:nil] autorelease];
 	[toolBarItems addObject:bbi];
 
-	// item: send message
-	bbi = [[[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStyleDone
-										  target:self
-										  action:@selector(sendMessage)] autorelease];
-	[toolBarItems addObject: bbi];
+//	// item: send message
+//	bbi = [[[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStyleDone
+//										  target:self
+//										  action:@selector(sendMessage)] autorelease];
+//	[toolBarItems addObject: bbi];
 	
-	// item: space
-	bbi = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-														 target:nil
-														 action:nil] autorelease];
-	[toolBarItems addObject:bbi];
+//	// item: space
+//	bbi = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+//														 target:nil
+//														 action:nil] autorelease];
+//	[toolBarItems addObject:bbi];
 	
 	// item: cancel editing 
 	bbi = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
@@ -59,6 +59,19 @@
 	[toolBarItems addObject:bbi];
 	
 	[toolBar setItems:toolBarItems animated:YES];
+}
+
+//==========================================================================================
+- (void) viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	
+	// item: send message
+	UIBarButtonItem* bbi = [[[UIBarButtonItem alloc] initWithTitle:@"Send" style:UIBarButtonItemStyleDone
+										   target:self
+										   action:@selector(sendMessage)] autorelease];
+	self.parentViewController.navigationItem.rightBarButtonItem = bbi;
+	
 }
 
 //==========================================================================================

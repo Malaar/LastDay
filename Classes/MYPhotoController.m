@@ -7,7 +7,7 @@
 //
 
 #import "MYPhotoController.h"
-
+#import "SHKFacebook.h"
 
 @implementation MYPhotoController
 
@@ -53,25 +53,31 @@
 {
 	image = [info objectForKey:UIImagePickerControllerOriginalImage];
 	[image retain];
+	[self postPhotoToFacebook];
 	[self dismissModalViewControllerAnimated:YES];
+	[self.navigationController popViewControllerAnimated:NO];
 }
 
 //==========================================================================================
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-	[self.navigationController popViewControllerAnimated:YES];
+	[self dismissModalViewControllerAnimated:YES];
+	[self.navigationController popViewControllerAnimated:NO];
 }
 
 //==========================================================================================
 - (IBAction) postPhotoToFacebook
 {
 	// post photo to Facebook ...
+	SHKItem* shkItem = [SHKItem image:image title:@"your photo title"];
+	[SHKFacebook shareItem:shkItem];
 }
 
 //==========================================================================================
 - (IBAction) postPhotoToFlikr
 {
 	// post photo to Flikr
+	assert(0 && "not implement yet");
 }
 
 //==========================================================================================
