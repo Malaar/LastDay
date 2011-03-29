@@ -39,6 +39,14 @@
 }
 
 //==========================================================================================
+- (void) viewDidLoad
+{
+	[super viewDidLoad];
+
+	spinneredView = [[MYSpinneredView alloc] initWithParentView:self.parentViewController.view];
+}
+
+//==========================================================================================
 - (void) viewWillAppear: (BOOL)animated
 {
 	[super viewWillAppear:animated];
@@ -124,6 +132,7 @@
 	[rssConnection cancel];
 	[rssConnection release];
 	[detailedController release];
+	[spinneredView release];
 	
     [super dealloc];
 }
@@ -131,6 +140,12 @@
 //==========================================================================================
 - (void) loadRssFeed
 {
+	//spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+	//spinner.center = self.view.center;
+	//[self.view addSubview:spinner];
+	//[spinner startAnimating];
+	[spinneredView show];
+	
 	// prepare
 	if(news)
 		[news release];
@@ -164,6 +179,8 @@
 //==========================================================================================
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
+	[spinneredView hide];
+	//[spinner stopAnimating];
 	[rssConnection release];
 	rssConnection = nil;
 	[receivedData release];
@@ -216,7 +233,8 @@
 		
 		itemNode = itemNode->NextSiblingElement("item");
 	}
-	
+	[spinneredView hide];
+	//[spinner stopAnimating];
 	[self.tableView reloadData];
 	self.tableView.scrollEnabled = true;
 }

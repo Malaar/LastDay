@@ -36,6 +36,7 @@
 	UIImagePickerController* imagePicker = [[[UIImagePickerController alloc] init] autorelease];
 	[imagePicker setDelegate: self];
 	imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+	//imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 	
 	[self presentModalViewController:imagePicker animated:NO];
 	//*/
@@ -69,7 +70,7 @@
 - (IBAction) postPhotoToFacebook
 {
 	// post photo to Facebook ...
-	SHKItem* shkItem = [SHKItem image:image title:@"your photo title"];
+	SHKItem* shkItem = [SHKItem image:image title:@"Almost last photo!"];
 	[SHKFacebook shareItem:shkItem];
 }
 

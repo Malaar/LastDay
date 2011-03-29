@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MYNewsRSSFeed.h"
 #import "MYNewsRSSDetailedController.h"
+#import "MYSpinneredView.h"
 
 @interface MYNewsRSSFeedController : UITableViewController
 {
@@ -18,6 +19,9 @@
 	NSMutableData* receivedData;	///< received data from server
 	
 	MYNewsRSSDetailedController* detailedController;
+	
+	//UIActivityIndicatorView* spinner;
+	MYSpinneredView* spinneredView;
 }
 
 @property (nonatomic, retain) MYNewsRSSFeed* rssFeed;

@@ -231,6 +231,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -266,16 +268,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
-								<string>0274AD9B133804A300D156F7</string>
-								<string>0274ADE1133804A400D156F7</string>
-								<string>0274ADEF133804A400D156F7</string>
-								<string>0274ADF3133804A400D156F7</string>
 								<string>080E96DDFE201D6D7F000001</string>
-								<string>0294E2DC133686B30034C040</string>
-								<string>02607401133500C6000A16E6</string>
 								<string>02ED94B41331612100D58A35</string>
-								<string>29B97317FDCFA39411CA2CEA</string>
-								<string>02ED94E013316DD500D58A35</string>
 								<string>19C28FACFE9D520D11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>E2644B35053B69B200211256</string>
@@ -283,9 +277,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>48</integer>
-									<integer>40</integer>
-									<integer>25</integer>
+									<integer>21</integer>
+									<integer>4</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -320,14 +313,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MYNewsRSSFeedController.mm</string>
+								<string>MYRootController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -335,11 +326,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MYNewsRSSFeedController.mm</string>
+										<string>MYRootController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>021B6E4A133FD6FF001DC9B2</string>
+										<string>028E7329134290B600BC2253</string>
 										<key>history</key>
 										<array>
 											<string>02CC54C8133026AB0051FE80</string>
@@ -349,25 +340,20 @@
 											<string>0281606213329F1D00D8581B</string>
 											<string>0281606313329F1D00D8581B</string>
 											<string>0281606413329F1D00D8581B</string>
-											<string>028160F41332D86B00D8581B</string>
 											<string>02607432133515B6000A16E6</string>
 											<string>02607434133515B6000A16E6</string>
 											<string>0260743C133515B6000A16E6</string>
 											<string>0260743D133515B6000A16E6</string>
 											<string>02607442133515B6000A16E6</string>
-											<string>025318B6133554FB00D2A5D2</string>
 											<string>0294E322133690820034C040</string>
 											<string>0294E325133690820034C040</string>
 											<string>0294E328133690820034C040</string>
 											<string>0294E39E13369E7C0034C040</string>
-											<string>0294E39F13369E7C0034C040</string>
 											<string>0294E3CD1336A31C0034C040</string>
 											<string>0274AD70133803A100D156F7</string>
-											<string>0274AEAC13380EDC00D156F7</string>
 											<string>0274AEBA1338108600D156F7</string>
 											<string>0274AEC71338117D00D156F7</string>
 											<string>02F681581339696B008AEA5E</string>
-											<string>02F681B3133973FB008AEA5E</string>
 											<string>02F681B5133973FB008AEA5E</string>
 											<string>02F681B7133973FB008AEA5E</string>
 											<string>029F8A9A133BE03E002B513C</string>
@@ -381,9 +367,7 @@
 											<string>027104C8133FBF8400056C2F</string>
 											<string>027104C9133FBF8400056C2F</string>
 											<string>027104F8133FD53800056C2F</string>
-											<string>027104F9133FD53800056C2F</string>
 											<string>027104FA133FD53800056C2F</string>
-											<string>027104FB133FD53800056C2F</string>
 											<string>027104FC133FD53800056C2F</string>
 											<string>027104FD133FD53800056C2F</string>
 											<string>027104FE133FD53800056C2F</string>
@@ -394,10 +378,17 @@
 											<string>02710503133FD53800056C2F</string>
 											<string>02710504133FD53800056C2F</string>
 											<string>02710505133FD53800056C2F</string>
-											<string>02710506133FD53800056C2F</string>
 											<string>02710507133FD53800056C2F</string>
-											<string>02710508133FD53800056C2F</string>
-											<string>0271050A133FD53800056C2F</string>
+											<string>0218666A134135C4001AECC6</string>
+											<string>0218666B134135C4001AECC6</string>
+											<string>0218668813413CFB001AECC6</string>
+											<string>0218668913413CFB001AECC6</string>
+											<string>0218668C13413CFB001AECC6</string>
+											<string>0276903F1342497400A41D52</string>
+											<string>027690401342497400A41D52</string>
+											<string>0276916213426C7000A41D52</string>
+											<string>028E7328134290B600BC2253</string>
+											<string>02186669134135C4001AECC6</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -455,9 +446,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>021B6E4B133FD6FF001DC9B2</string>
+				<string>028E732A134290B600BC2253</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>021B6E4C133FD6FF001DC9B2</string>
+				<string>028E732B134290B600BC2253</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -595,10 +586,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>02B6CE10132ECA7600071735</string>
-		<string>1CD10A99069EF8BA00B06720</string>
-		<string>/Users/malaar/Documents/iOS Projects/LastDay/LastDay.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 124 1024 622 0 0 1024 746 </string>
@@ -678,7 +666,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>02B6CE10132ECA7600071735</string>
-				<string>021B6E4D133FD6FF001DC9B2</string>
+				<string>028E732C134290B600BC2253</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -800,13 +788,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>021B6E4E133FD6FF001DC9B2</string>
+				<string>0276914F13426A6E00A41D52</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>021B6E4F133FD6FF001DC9B2</string>
-				<string>021B6E50133FD6FF001DC9B2</string>
-				<string>021B6E51133FD6FF001DC9B2</string>
-				<string>021B6E52133FD6FF001DC9B2</string>
-				<string>021B6E53133FD6FF001DC9B2</string>
+				<string>0276915013426A6E00A41D52</string>
+				<string>0276915113426A6E00A41D52</string>
+				<string>0276915213426A6E00A41D52</string>
+				<string>0276915313426A6E00A41D52</string>
+				<string>0276915413426A6E00A41D52</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -815,7 +803,7 @@
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -960,7 +948,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>021B6E54133FD6FF001DC9B2</string>
+				<string>0276915513426A6E00A41D52</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -1436,7 +1424,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {500, 315}}</string>
 								<key>RubberWindowFrame</key>
-								<string>31 367 500 356 0 0 1024 746 </string>
+								<string>65 349 500 356 0 0 1024 746 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCRefactoringModule</string>
@@ -1459,11 +1447,11 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>02ED94CD13316AA700D58A35</string>
-				<string>029F8AA0133BE03E002B513C</string>
+				<string>0276915F13426B1600A41D52</string>
 				<string>02ED94CC13316AA700D58A35</string>
 			</array>
 			<key>WindowString</key>
-			<string>31 367 500 356 0 0 1024 746 </string>
+			<string>65 349 500 356 0 0 1024 746 </string>
 			<key>WindowToolGUID</key>
 			<string>02ED94CD13316AA700D58A35</string>
 			<key>WindowToolIsVisible</key>
