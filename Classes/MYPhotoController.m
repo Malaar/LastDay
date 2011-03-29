@@ -35,8 +35,8 @@
 	//*
 	UIImagePickerController* imagePicker = [[[UIImagePickerController alloc] init] autorelease];
 	[imagePicker setDelegate: self];
-	imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-	//imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+	//imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+	imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 	
 	[self presentModalViewController:imagePicker animated:NO];
 	//*/
