@@ -91,6 +91,9 @@
 		case 3:
 			[self.navigationController pushViewController:[self newsController] animated:YES];
 			break;
+		case 4:
+			[self.navigationController pushViewController:[self exchangeController] animated:YES];
+			break;
 	}
 	
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -115,6 +118,7 @@
 	[themeArray release];
 	[photoController release];
 	[newsController release];
+	[exchangeController release];
     [super dealloc];
 }
 
@@ -146,6 +150,13 @@
 }
 
 //==========================================================================================
+-(MYExchangeController*) exchangeController
+{
+	if(!exchangeController)
+		exchangeController = [[MYExchangeController alloc] init];
+	
+	return exchangeController;
+}
 //==========================================================================================
 //==========================================================================================
 

@@ -10,6 +10,7 @@
 #import "MYMessageController.h"
 #import "MYPhotoController.h"
 #import "MYNewsController.h"
+#import "MYExchangeController.h"
 
 
 @interface MYRootController : UITableViewController
@@ -20,10 +21,11 @@
 	MYMessageController* messageController;
 	MYPhotoController* photoController;
 	MYNewsController* newsController;
+	MYExchangeController* exchangeController;
 }
 
 - (MYMessageController*) messageController;
 - (MYPhotoController*) photoController;
--(MYNewsController*) newsController;
-
+- (MYNewsController*) newsController;
+- (MYExchangeController*) exchangeController;
 @end
