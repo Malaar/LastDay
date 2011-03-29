@@ -122,6 +122,13 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D801B30F44B63D00FB423F /* CoreData.framework */; };
+		5BA92A72134282B600D96F19 /* MYSpinneredView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA92A71134282B600D96F19 /* MYSpinneredView.m */; };
+		5BA92AB71342909900D96F19 /* MYExchangeChooseCurrencyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA92AAE1342909900D96F19 /* MYExchangeChooseCurrencyController.m */; };
+		5BA92AB81342909900D96F19 /* MYExchangeChooseCurrencyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BA92AAF1342909900D96F19 /* MYExchangeChooseCurrencyController.xib */; };
+		5BA92AB91342909900D96F19 /* MYExchangeController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5BA92AB11342909900D96F19 /* MYExchangeController.mm */; };
+		5BA92ABA1342909900D96F19 /* MYExchangeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BA92AB21342909900D96F19 /* MYExchangeController.xib */; };
+		5BA92ABB1342909900D96F19 /* MYExchangeDataCyrrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA92AB41342909900D96F19 /* MYExchangeDataCyrrency.m */; };
+		5BA92ABC1342909900D96F19 /* MYExchangeNameCyrrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA92AB61342909900D96F19 /* MYExchangeNameCyrrency.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -344,6 +351,18 @@
 		28D801B30F44B63D00FB423F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
 		32CA4F630368D1EE00C91783 /* LastDay_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastDay_Prefix.pch; sourceTree = "<group>"; };
+		5BA92A70134282B600D96F19 /* MYSpinneredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYSpinneredView.h; sourceTree = "<group>"; };
+		5BA92A71134282B600D96F19 /* MYSpinneredView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYSpinneredView.m; sourceTree = "<group>"; };
+		5BA92AAD1342909900D96F19 /* MYExchangeChooseCurrencyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYExchangeChooseCurrencyController.h; sourceTree = "<group>"; };
+		5BA92AAE1342909900D96F19 /* MYExchangeChooseCurrencyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYExchangeChooseCurrencyController.m; sourceTree = "<group>"; };
+		5BA92AAF1342909900D96F19 /* MYExchangeChooseCurrencyController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MYExchangeChooseCurrencyController.xib; path = Classes/MYExchangeChooseCurrencyController.xib; sourceTree = "<group>"; };
+		5BA92AB01342909900D96F19 /* MYExchangeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYExchangeController.h; sourceTree = "<group>"; };
+		5BA92AB11342909900D96F19 /* MYExchangeController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MYExchangeController.mm; sourceTree = "<group>"; };
+		5BA92AB21342909900D96F19 /* MYExchangeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MYExchangeController.xib; path = Classes/MYExchangeController.xib; sourceTree = "<group>"; };
+		5BA92AB31342909900D96F19 /* MYExchangeDataCyrrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYExchangeDataCyrrency.h; sourceTree = "<group>"; };
+		5BA92AB41342909900D96F19 /* MYExchangeDataCyrrency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYExchangeDataCyrrency.m; sourceTree = "<group>"; };
+		5BA92AB51342909900D96F19 /* MYExchangeNameCyrrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYExchangeNameCyrrency.h; sourceTree = "<group>"; };
+		5BA92AB61342909900D96F19 /* MYExchangeNameCyrrency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYExchangeNameCyrrency.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* LastDay-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LastDay-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -839,6 +858,8 @@
 		02ED94E013316DD500D58A35 /* NIB */ = {
 			isa = PBXGroup;
 			children = (
+				5BA92AB21342909900D96F19 /* MYExchangeController.xib */,
+				5BA92AAF1342909900D96F19 /* MYExchangeChooseCurrencyController.xib */,
 				0294E2E2133688C50034C040 /* MYMessageOwn.xib */,
 				0294E3D41336A3960034C040 /* MYMessagesTemplatesController.xib */,
 				029F8A89133BDB73002B513C /* MYMessageDetailed.xib */,
@@ -852,6 +873,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5BA92ABD134290B600D96F19 /* Exchange */,
 				0294E2DC133686B30034C040 /* Messages */,
 				02607401133500C6000A16E6 /* Photo */,
 				02ED94B41331612100D58A35 /* News */,
@@ -861,6 +883,8 @@
 				0274335C132FFECD00B63F5F /* MYRootController.m */,
 				027433C61330084800B63F5F /* MYThemeData.h */,
 				027433C71330084800B63F5F /* MYThemeData.m */,
+				5BA92A70134282B600D96F19 /* MYSpinneredView.h */,
+				5BA92A71134282B600D96F19 /* MYSpinneredView.m */,
 			);
 			path = Classes;
 			sourceTree = SOURCE_ROOT;
@@ -926,6 +950,21 @@
 				28D801B30F44B63D00FB423F /* CoreData.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5BA92ABD134290B600D96F19 /* Exchange */ = {
+			isa = PBXGroup;
+			children = (
+				5BA92AB31342909900D96F19 /* MYExchangeDataCyrrency.h */,
+				5BA92AB41342909900D96F19 /* MYExchangeDataCyrrency.m */,
+				5BA92AB51342909900D96F19 /* MYExchangeNameCyrrency.h */,
+				5BA92AB61342909900D96F19 /* MYExchangeNameCyrrency.m */,
+				5BA92AB01342909900D96F19 /* MYExchangeController.h */,
+				5BA92AB11342909900D96F19 /* MYExchangeController.mm */,
+				5BA92AAD1342909900D96F19 /* MYExchangeChooseCurrencyController.h */,
+				5BA92AAE1342909900D96F19 /* MYExchangeChooseCurrencyController.m */,
+			);
+			name = Exchange;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -997,6 +1036,8 @@
 				0274AE57133804A400D156F7 /* FBConnect.bundle in Resources */,
 				02F6818313396AB8008AEA5E /* messTemplates.xml in Resources */,
 				029F8A8B133BDB73002B513C /* MYMessageDetailed.xib in Resources */,
+				5BA92AB81342909900D96F19 /* MYExchangeChooseCurrencyController.xib in Resources */,
+				5BA92ABA1342909900D96F19 /* MYExchangeController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1096,6 +1137,11 @@
 				0274AE72133804A400D156F7 /* SHKViewControllerWrapper.m in Sources */,
 				02F6810613395DBC008AEA5E /* MYMessageSender.m in Sources */,
 				029F8A8A133BDB73002B513C /* MYMessageDetailedController.m in Sources */,
+				5BA92A72134282B600D96F19 /* MYSpinneredView.m in Sources */,
+				5BA92AB71342909900D96F19 /* MYExchangeChooseCurrencyController.m in Sources */,
+				5BA92AB91342909900D96F19 /* MYExchangeController.mm in Sources */,
+				5BA92ABB1342909900D96F19 /* MYExchangeDataCyrrency.m in Sources */,
+				5BA92ABC1342909900D96F19 /* MYExchangeNameCyrrency.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
