@@ -1,0 +1,67 @@
+<valuta>
+	<item abbreviation = "AED" full_name="United Arab Emirates Dirham" />
+	<item abbreviation = "ARS" full_name="Argentine Peso" />
+	<item abbreviation = "AUD" full_name="Australian Dollar" />
+	<item abbreviation = "BBD" full_name="Barbadian Dollar" />
+	<item abbreviation = "BHD" full_name="Bahraini Dinar" />
+	<item abbreviation = "BOB" full_name="Bolivian Boliviano" />
+	<item abbreviation = "BRL" full_name="Brazilian Real" />
+	<item abbreviation = "CAD" full_name="Canadian Dollar" />
+	<item abbreviation = "CHF" full_name="Swiss Franc" />
+	<item abbreviation = "CLP" full_name="Chilean Peso" />
+	<item abbreviation = "CNY" full_name="Chinese Yuan" />
+	<item abbreviation = "COP" full_name="Colombian Peso" />
+	<item abbreviation = "CZK" full_name="Czech Koruna" />
+	<item abbreviation = "DKK" full_name="Danish Krone" />
+	<item abbreviation = "EGP" full_name="Egyptian Pound" />
+	<item abbreviation = "EUR" full_name="Euro" />
+	<item abbreviation = "GBP" full_name="British Pound Sterling" />
+	<item abbreviation = "HKD" full_name="Hong Kong Dollar" />
+	<item abbreviation = "HUF" full_name="Hungarian Forint" />
+	<item abbreviation = "IDR" full_name="Indonesian Rupiah" />
+	<item abbreviation = "ILS" full_name="Israeli Sheqel" />
+	<item abbreviation = "INR" full_name="Indian Rupee" />
+	<item abbreviation = "ISK" full_name="Icelandic Krona" />
+	<item abbreviation = "JMD" full_name="Jamaican Dollar" />
+	<item abbreviation = "JOD" full_name="Jordanian Dinar" />
+	<item abbreviation = "JPY" full_name="Japanese Yen" />
+	<item abbreviation = "KES" full_name="Kenyan Shilling" />
+	<item abbreviation = "KRW" full_name="South Korean Won" />
+	<item abbreviation = "KWD" full_name="Kuwaiti Dinar" />
+	<item abbreviation = "LBP" full_name="Lebanese Pound" />
+	<item abbreviation = "LKR" full_name="Sri Lankan Rupee" />
+	<item abbreviation = "LTL" full_name="Lithuanian Litas" />
+	<item abbreviation = "LVL" full_name="Latvian Lats" />
+	<item abbreviation = "MAD" full_name="Moroccan Dirham" />
+	<item abbreviation = "MXN" full_name="Mexican Peso" />
+	<item abbreviation = "MYR" full_name="Malaysian Ringgit" />
+	<item abbreviation = "NAD" full_name="Namibian Dollar" />
+	<item abbreviation = "NGN" full_name="Nigerian Naira" />
+	<item abbreviation = "NOK" full_name="Norwegian Krone" />
+	<item abbreviation = "NPR" full_name="Nepalese Rupee" />
+	<item abbreviation = "NZD" full_name="New Zealand Dollar" />
+	<item abbreviation = "OMR" full_name="Omani Rial" />
+	<item abbreviation = "PAB" full_name="Panamanian Balboa" />
+	<item abbreviation = "PEN" full_name="Peru Nuevo Sol" />
+	<item abbreviation = "PHP" full_name="Philippine Peso" />
+	<item abbreviation = "PKR" full_name="Pakistani Rupee" />
+	<item abbreviation = "PLN" full_name="Polish Zloty" />
+	<item abbreviation = "QAR" full_name="Qatari Riyal" />
+	<item abbreviation = "RON" full_name="Romanian Leu" />
+	<item abbreviation = "RUB" full_name="Russian Rouble" />
+	<item abbreviation = "SAR" full_name="Saudi Riyal" />
+	<item abbreviation = "SEK" full_name="Swedish Krona" />
+	<item abbreviation = "SGD" full_name="Singapore Dollar" />
+	<item abbreviation = "THB" full_name="Thai Baht" />
+	<item abbreviation = "TRY" full_name="Turkish Lira" />
+	<item abbreviation = "TWD" full_name="Taiwanese Dollar" />
+	<item abbreviation = "UAH" full_name="Ukraine Hryvnia" />
+	<item abbreviation = "USD" full_name="US Dollar" />
+	<item abbreviation = "UYU" full_name="Uruguayan Peso" />
+	<item abbreviation = "VEF" full_name="Venezuelan Bolivar" />
+	<item abbreviation = "VND" full_name="Vietnamese Dong" />
+	<item abbreviation = "XAF" full_name="Central African CFA franc" />
+	<item abbreviation = "XCD" full_name="East Caribbean Dollar" />
+	<item abbreviation = "XOF" full_name="West African CFA franc" />
+	<item abbreviation = "ZAR" full_name="South African Rand" />
+</valuta> 
