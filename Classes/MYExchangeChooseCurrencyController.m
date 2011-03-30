@@ -13,7 +13,7 @@
 @implementation MYExchangeChooseCurrencyController
 
 //==========================================================================================
-@synthesize namesCurrency, newCurrency;
+@synthesize namesCurrency, newCurrency, correctionDataCyrrency;
 //==========================================================================================
 -(id)init
 {
@@ -54,10 +54,11 @@
 	[toolBarItems addObject:bbi];
 	
 	// item: cancel editing 
-	bbi = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+	bbi = [[[UIBarButtonItem alloc] initWithTitle:@" Cancel " style:UIBarButtonItemStyleBordered
 														 target:self
 														 action:@selector(canselButtonPressed)] autorelease];
 	[toolBarItems addObject: bbi];
+	cancelButton = bbi;
 	
 	// item: space
 	bbi = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
@@ -68,29 +69,60 @@
 	[toolBar setItems:toolBarItems animated:YES];
 	
 }
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	
+	if (typeAction == actionCorrektCurrency) 
+	{
+		[pickerView selectRow: [correctionDataCyrrency indexFirstCurrency] 
+				  inComponent: kFirstPickerComponent animated:TRUE];
+		[pickerView selectRow: [correctionDataCyrrency indexSecondCurrency] 
+				  inComponent: kSecondPickerComponent animated:TRUE];
+	}
+}
 //==========================================================================================
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-		
-	MYExchangeNameCyrrency* nameCyrrency;
 	
-	NSInteger indexFirstComponent = [pickerView selectedRowInComponent:kFirstPickerComponent];
-	if(indexFirstComponent >= 0 && indexFirstComponent < [namesCurrency count])
+	if (typeAction == actionCorrektCurrency) 
 	{
-		nameCyrrency = (MYExchangeNameCyrrency*)[namesCurrency objectAtIndex:indexFirstComponent];
-		[labelTop setText: nameCyrrency.fullName ];
+		if (okButton)
+			okButton.title = @" Save ";
+		if (cancelButton) 
+			cancelButton.title = @" Reset ";
+		
+		NSString* text_1 = [[namesCurrency objectAtIndex:[correctionDataCyrrency indexFirstCurrency]] fullName];
+		[labelTop setText:text_1];
+		NSString* text_2 = [[namesCurrency objectAtIndex:[correctionDataCyrrency indexSecondCurrency]] fullName];
+		[labelButton setText:text_2];
 	}
-	NSInteger indexSecondComponent = [pickerView selectedRowInComponent:kSecondPickerComponent];
-	if(indexSecondComponent >= 0 && indexSecondComponent < [namesCurrency count])
+	else
 	{
-		nameCyrrency = (MYExchangeNameCyrrency*)[namesCurrency objectAtIndex:indexSecondComponent];
-		[labelButton setText: nameCyrrency.fullName ];
+		if (okButton)
+			okButton.title = @"  Ok  ";
+		if (cancelButton) 
+			cancelButton.title = @" Cancel ";
+	
+		MYExchangeNameCyrrency* nameCyrrency;	
+		NSInteger indexFirstComponent = [pickerView selectedRowInComponent:kFirstPickerComponent];
+		if(indexFirstComponent >= 0 && indexFirstComponent < [namesCurrency count])
+		{
+			nameCyrrency = (MYExchangeNameCyrrency*)[namesCurrency objectAtIndex:indexFirstComponent];
+			[labelTop setText: nameCyrrency.fullName ];
+		}
+		NSInteger indexSecondComponent = [pickerView selectedRowInComponent:kSecondPickerComponent];
+		if(indexSecondComponent >= 0 && indexSecondComponent < [namesCurrency count])
+		{
+			nameCyrrency = (MYExchangeNameCyrrency*)[namesCurrency objectAtIndex:indexSecondComponent];
+			[labelButton setText: nameCyrrency.fullName ];
+		}
+		if (okButton) {
+			[okButton setEnabled: [self isDifferentIndexOfComponent]];
+		}
 	}
-	if (okButton) {
-		[okButton setEnabled: [self isDifferentIndexOfComponent]];
-	}
-	[labelCountCurrency setText:@""];
+	[labelCountCurrency setText:@""];	
 }
 //==========================================================================================
 - (void) viewWillDisappear:(BOOL)animated
@@ -135,6 +167,7 @@
 	[labelCountCurrency release];
 	[namesCurrency release];
 	[newCurrency release];
+	[correctionDataCyrrency release];
     [super dealloc];
 }
 //==========================================================================================
@@ -187,15 +220,15 @@
 		if (!newCurrency)
 			newCurrency = [[NSMutableArray alloc] init];
 
-		MYExchangeDataCyrrency* dataCyrrency = [[MYExchangeDataCyrrency alloc] init];
+		MYExchangeDataCyrrency* dataCyrrency = [[[MYExchangeDataCyrrency alloc] init] autorelease];
 		NSInteger ind_1 = [pickerView selectedRowInComponent:kFirstPickerComponent];
 		NSInteger ind_2 = [pickerView selectedRowInComponent:kSecondPickerComponent];
 		NSString* str_1 = [[namesCurrency objectAtIndex:ind_1] shortName];
 		NSString* str_2 = [[namesCurrency objectAtIndex:ind_2] shortName];
 		[dataCyrrency setNameFirstCurrency:str_1];
 		[dataCyrrency setNameSecondCurrency:str_2];
-		//[dataCyrrency setNameFirstCurrency: [namesCurrency objectAtIndex:[pickerView selectedRowInComponent:kFirstPickerComponent]]];
-		//[dataCyrrency setNameSecondCurrency:[namesCurrency objectAtIndex:[pickerView selectedRowInComponent:kSecondPickerComponent]]];
+		[dataCyrrency setIndexFirstCurrency:ind_1];
+		[dataCyrrency setIndexSecondCurrency:ind_2];
 		
 		switch (typeAction) 
 		{
@@ -209,8 +242,7 @@
 					[okButton setEnabled:FALSE];
 				}
 				NSString* value = [NSString stringWithFormat:@"%@ | %@, ",dataCyrrency.nameFirstCurrency, dataCyrrency.nameSecondCurrency];
-				NSString* name = [labelCountCurrency.text stringByAppendingString:value];
-				
+				NSString* name = [labelCountCurrency.text stringByAppendingString:value];				
 				[labelCountCurrency setText:name];
 				break;
 			case actionCorrektCurrency:
@@ -218,7 +250,6 @@
 				[okButton setEnabled:FALSE];
 				break;
 		}
-		[dataCyrrency release];		
 	}
 }
 //==========================================================================================
@@ -230,6 +261,14 @@
 	if(okButton)
 		[okButton setEnabled:[self isDifferentIndexOfComponent]];
 	[labelCountCurrency setText:@""];
+	
+	if (typeAction == actionCorrektCurrency) 
+	{
+		[pickerView selectRow: [correctionDataCyrrency indexFirstCurrency] 
+				  inComponent: kFirstPickerComponent animated:TRUE];
+		[pickerView selectRow: [correctionDataCyrrency indexSecondCurrency]  
+				  inComponent: kSecondPickerComponent animated:TRUE];
+	}
 }
 //==========================================================================================
 -(BOOL)isDifferentIndexOfComponent

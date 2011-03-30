@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MYExchangeDataCyrrency.h"
+
 #define kFirstPickerComponent 0
 #define kSecondPickerComponent 1
 #define kMaxCoundAddCurrency 3
@@ -32,11 +34,16 @@ typedef enum MYExchangeChooseCurrencyControllerTypeAction MYExchangeChooseCurren
 	NSMutableArray* newCurrency;
 	
 	UIBarButtonItem* okButton;
+	UIBarButtonItem* cancelButton;
+	
+	MYExchangeDataCyrrency* correctionDataCyrrency;
+
 	MYExchangeChooseCurrencyControllerTypeAction typeAction;
 }
 
 @property (nonatomic, retain) NSMutableArray* namesCurrency;
 @property (nonatomic, retain) NSMutableArray* newCurrency;
+@property (nonatomic, retain) MYExchangeDataCyrrency* correctionDataCyrrency;
 
 -(void)okButtonPressed;
 -(void)canselButtonPressed;
