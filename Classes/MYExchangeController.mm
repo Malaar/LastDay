@@ -8,7 +8,6 @@
 
 #import "MYExchangeController.h"
 #import "MYExchangeNameCyrrency.h"
-#import "MYExchangeDataCyrrency.h"
 #import "tinyxml.h"
 
 @implementation MYExchangeController
@@ -29,7 +28,10 @@
 //==========================================================================================
 - (void)viewDidLoad 
 {
-	[super viewDidLoad];	
+	[super viewDidLoad];
+	
+	spinneredView = [[MYSpinneredView alloc] initWithParentView:self.parentViewController.view];
+	
 	[exchangeTableView setDelegate:self];
 	[exchangeTableView setDataSource: self];
 	
@@ -38,7 +40,7 @@
 	
 	bbi = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
 														target:nil 
-														action:nil] autorelease];
+														action:@selector(loadRssFeed)] autorelease];
 	self.navigationItem.rightBarButtonItem = bbi;
 	
 	// item: space
@@ -62,7 +64,7 @@
 	// item: cancel editing 
 	bbi = [[[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStyleBordered
 														 target:self
-														 action:@selector(editExchangeTableView)] autorelease];
+														 action:@selector(loadRssFeed)] autorelease];
 	[toolBarItems addObject: bbi];
 	editButton = bbi;
 	
@@ -77,18 +79,30 @@
 //==========================================================================================
 -(void) viewWillAppear:(BOOL)animated
 {
-	[super viewWillAppear:animated];
+	[super viewWillAppear:animated];	
 	
-	if ([[self chooseCurrencyController] typeAction] == actionAddNewCurrency) 
+	BOOL updata = FALSE;
+	NSMutableArray* newDataCurrency = [[self chooseCurrencyController] newCurrency];
+	
+	if ([newDataCurrency count] > 0) 
 	{
-		NSMutableArray* newDataCurrency = [[self chooseCurrencyController] newCurrency];
-		for (int i = 0; i < [newDataCurrency count]; i++) 
+		switch ([[self chooseCurrencyController] typeAction]) 
 		{
-			[dataCyrrency addObject:[newDataCurrency objectAtIndex:i]];
-		}
-		[exchangeTableView reloadData];
-		[[self chooseCurrencyController] setTypeAction: actionNoTupe];
-	}	
+			case actionAddNewCurrency:
+				for (int i = 0; i < [newDataCurrency count]; i++) 
+					[dataCyrrency addObject:[newDataCurrency objectAtIndex:i]];
+				updata = TRUE;
+				break;
+			case actionCorrektCurrency:
+				[dataCyrrency replaceObjectAtIndex:indexSelecteCell withObject: [newDataCurrency objectAtIndex:0]];
+				updata = TRUE;
+				break;
+		}		
+		if (updata) 
+			[exchangeTableView reloadData];
+
+	}
+	[[self chooseCurrencyController] setTypeAction: actionNoTupe];
 }
 //==========================================================================================
 - (void) viewDidUnload
@@ -99,6 +113,18 @@
 	toolBar = nil;	
 	[exchangeTableView release];
 	exchangeTableView = nil;
+}
+//==========================================================================================
+- (void) viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+	
+	if(rssConnection)
+	{
+		[rssConnection cancel];
+		[rssConnection release];
+		rssConnection = nil;
+	}
 }
 //==========================================================================================
 - (void)didReceiveMemoryWarning 
@@ -114,13 +140,16 @@
 	[namesCyrrency release];
 	[dataCyrrency release];
 	[lastDataUpdata release];
-    [super dealloc];
+    [spinneredView release];
+	[receivedData release];
+	[rssConnection cancel];
+	[rssConnection release];
+	[super dealloc];
 }
 //==========================================================================================
 -(void)actionAddDataCyrrency
 {
-	[[self chooseCurrencyController]
-	 setTypeAction: actionAddNewCurrency];
+	[[self chooseCurrencyController] setTypeAction: actionAddNewCurrency];
 	[self.navigationController pushViewController: [self chooseCurrencyController] animated:YES];
 }
 //==========================================================================================
@@ -153,7 +182,9 @@
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-	[self.navigationController pushViewController: [self chooseCurrencyController] animated:YES];
+	indexSelecteCell = [indexPath row];
+	[[self chooseCurrencyController] setCorrectionDataCyrrency: [dataCyrrency objectAtIndex:[indexPath row]]];
+	[self actionCorrectDataCyrrency];
 }
 
 //==========================================================================================
@@ -239,6 +270,96 @@
 	dataCyrrency = [[NSMutableArray alloc] init];
 	//...
 	return result;
+}
+//==========================================================================================
+- (void) loadRssFeed
+{	
+	if ([dataCyrrency count]) 
+	{
+		indexLoadDataCyrrency = 0;
+		[self updataRssCyrrency:[dataCyrrency objectAtIndex:indexLoadDataCyrrency] ];
+		[spinneredView show];
+		[exchangeTableView setScrollEnabled: false];
+	}
+}
+//==========================================================================================
+- (void) updataRssCyrrency: (MYExchangeDataCyrrency*) aDataCyrrency
+{
+	[receivedData release];
+	receivedData = [NSMutableData new];
+	
+	if(rssConnection)
+	{
+		[rssConnection cancel];
+		[rssConnection release];
+	}
+		
+	NSString* strURL = [NSString stringWithFormat:@"http://themoneyconverter.com/%@/rss.xm",
+						aDataCyrrency.nameFirstCurrency];
+	NSURL* url = [NSURL URLWithString:strURL];
+	NSURLRequest* request = [[[NSURLRequest alloc] initWithURL:url
+												  cachePolicy:NSURLRequestReloadIgnoringCacheData
+											  timeoutInterval:30] autorelease];
+	rssConnection = [[NSURLConnection alloc] initWithRequest:request
+													delegate:self
+											startImmediately:YES];
+}
+//==========================================================================================
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+	NSString* xmlData = [[[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding] autorelease];
+	const char* receivedXMLString = [xmlData UTF8String];
+	TiXmlDocument domDocument;
+	domDocument.Parse(receivedXMLString);
+	TiXmlElement* rootNode = domDocument.RootElement();
+	TiXmlElement* channelNode = rootNode->FirstChildElement("title");
+	if (!channelNode) {
+		NSLog(@"!!!!!!!!!NO!!!!!!");
+	}
+	else {
+		NSLog(@"~~~~~~~~~~~~~~~YES~~~~~~~~~~~");
+	}
+
+	//TiXmlElement* itemNode = channelNode->FirstChildElement("item");
+	/*
+	while(itemNode)
+	{
+		itemNode = itemNode->NextSiblingElement("item");
+	}
+	*/
+	indexLoadDataCyrrency++;
+	if (indexLoadDataCyrrency == [dataCyrrency count]) 
+	{
+		[spinneredView hide];
+		[exchangeTableView reloadData];
+		[exchangeTableView setScrollEnabled: true];
+	}
+	else 
+	{
+		[self updataRssCyrrency: [dataCyrrency objectAtIndex:indexLoadDataCyrrency]];
+	}
+
+}
+//==========================================================================================
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+	
+	[spinneredView hide];
+	[rssConnection release];
+	rssConnection = nil;
+	[receivedData release];
+	receivedData = nil;
+	UIAlertView* alertView = [[[UIAlertView alloc] initWithTitle:@"Connection Error"
+														 message:[error localizedDescription]
+														delegate:self
+											   cancelButtonTitle:@"OK"
+											   otherButtonTitles:nil] autorelease];
+	[alertView show];
+}
+//==========================================================================================
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+	[receivedData appendData:data];
 }
 //==========================================================================================
 @end
