@@ -12,7 +12,7 @@
 @implementation MYExchangeDataCyrrency
 
 //==========================================================================================
-@synthesize nameFirstCurrency, nameSecondCurrency, course;
+@synthesize nameFirstCurrency,nameSecondCurrency,indexFirstCurrency,indexSecondCurrency,course;
 //==========================================================================================
 +(id)newCyrrency
 {
@@ -46,10 +46,10 @@
 //==========================================================================================
 -(NSString*)fullInfo
 {
- 	return [NSString stringWithFormat: @"%@ / %@ = %f", 
-			[self nameFirstCurrency], 
-			[self nameSecondCurrency], 
-			[self course] ];
+ 	return [NSString stringWithFormat: @"1 %@ = %f %@", 
+			[self nameFirstCurrency],
+			[self course], 
+			[self nameSecondCurrency] ];
 }
 //==========================================================================================
 @end

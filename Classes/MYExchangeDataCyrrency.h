@@ -13,17 +13,25 @@
 {
 	NSString* nameFirstCurrency;
 	NSString* nameSecondCurrency;
+	NSInteger indexFirstCurrency;
+	NSInteger indexSecondCurrency;
 	float course;
 }
 
 @property (nonatomic, retain) NSString* nameFirstCurrency;
 @property (nonatomic, retain) NSString* nameSecondCurrency;
+@property (nonatomic) NSInteger indexFirstCurrency;
+@property (nonatomic) NSInteger indexSecondCurrency;
 @property (nonatomic) float course;
 
 +(id)newCyrrency;
 +(id)newCyrrencyWithData: (float)aCourse firstCurrency:(NSString*)aFirstCurrency secondCurrency: (NSString*)aSecondCurrency;
 
 - (id)init;
-- (id)initWithData: (float)aCourse firstCurrency:(NSString*)aFirstCurrency secondCurrency: (NSString*)aSecondCurrency; 
+- (id)initWithData: (float)aCourse 
+	 firstCurrency: (NSString*)aFirstCurrency 
+	secondCurrency: (NSString*)aSecondCurrency;
+//indexFirstCurrency: (NSInteger) aIndexFirstCurrency
+//indexSecondCurrency:(NSInteger) aIndexSecondCurrency; 
 - (NSString*)fullInfo;
 @end
