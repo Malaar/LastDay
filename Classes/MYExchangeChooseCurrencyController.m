@@ -229,6 +229,7 @@
 		[dataCyrrency setNameSecondCurrency:str_2];
 		[dataCyrrency setIndexFirstCurrency:ind_1];
 		[dataCyrrency setIndexSecondCurrency:ind_2];
+		[dataCyrrency setCourse:@"?"];
 		
 		switch (typeAction) 
 		{
