@@ -289,7 +289,7 @@
 	
 	TiXmlDocument domDocument;
 	
-	const char* messagesPath;
+	const char* messagesPath = 0;
 	
 	// try to load from Documents/ directory:
 	NSString* strPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
