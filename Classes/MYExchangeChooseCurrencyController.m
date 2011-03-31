@@ -223,33 +223,36 @@
 		MYExchangeDataCyrrency* dataCyrrency = [[[MYExchangeDataCyrrency alloc] init] autorelease];
 		NSInteger ind_1 = [pickerView selectedRowInComponent:kFirstPickerComponent];
 		NSInteger ind_2 = [pickerView selectedRowInComponent:kSecondPickerComponent];
-		NSString* str_1 = [[namesCurrency objectAtIndex:ind_1] shortName];
-		NSString* str_2 = [[namesCurrency objectAtIndex:ind_2] shortName];
-		[dataCyrrency setNameFirstCurrency:str_1];
-		[dataCyrrency setNameSecondCurrency:str_2];
-		[dataCyrrency setIndexFirstCurrency:ind_1];
-		[dataCyrrency setIndexSecondCurrency:ind_2];
-		[dataCyrrency setCourse:@"?"];
-		
-		switch (typeAction) 
+		if (ind_1 != ind_2)
 		{
-			case actionAddNewCurrency:
-				if ([newCurrency count] < kMaxCoundAddCurrency) 
-				{
+			NSString* str_1 = [[namesCurrency objectAtIndex:ind_1] shortName];
+			NSString* str_2 = [[namesCurrency objectAtIndex:ind_2] shortName];
+			[dataCyrrency setNameFirstCurrency:str_1];
+			[dataCyrrency setNameSecondCurrency:str_2];
+			[dataCyrrency setIndexFirstCurrency:ind_1];
+			[dataCyrrency setIndexSecondCurrency:ind_2];
+			[dataCyrrency setCourse:@"?"];
+		
+			switch (typeAction) 
+			{
+				case actionAddNewCurrency:
+					if ([newCurrency count] < kMaxCoundAddCurrency) 
+					{
+						[newCurrency addObject:dataCyrrency];
+					}
+					if ([newCurrency count] == kMaxCoundAddCurrency)
+					{
+						[okButton setEnabled:FALSE];
+					}
+					NSString* value = [NSString stringWithFormat:@"%@ | %@, ",dataCyrrency.nameFirstCurrency, dataCyrrency.nameSecondCurrency];
+					NSString* name = [labelCountCurrency.text stringByAppendingString:value];				
+					[labelCountCurrency setText:name];
+					break;
+				case actionCorrektCurrency:
 					[newCurrency addObject:dataCyrrency];
-				}
-				if ([newCurrency count] == kMaxCoundAddCurrency)
-				{
 					[okButton setEnabled:FALSE];
-				}
-				NSString* value = [NSString stringWithFormat:@"%@ | %@, ",dataCyrrency.nameFirstCurrency, dataCyrrency.nameSecondCurrency];
-				NSString* name = [labelCountCurrency.text stringByAppendingString:value];				
-				[labelCountCurrency setText:name];
-				break;
-			case actionCorrektCurrency:
-				[newCurrency addObject:dataCyrrency];
-				[okButton setEnabled:FALSE];
-				break;
+					break;
+			}
 		}
 	}
 }
