@@ -19,7 +19,7 @@
 	return [[[MYExchangeDataCyrrency alloc] init] autorelease];
 }
 //==========================================================================================
-+(id)newCyrrencyWithData:(float)aCourse 
++(id)newCyrrencyWithData:(NSString *)aCourse 
 		   firstCurrency:(NSString *)aFirstCurrency 
 		  secondCurrency:(NSString *)aSecondCurrency
 {
@@ -33,7 +33,7 @@
 	return [self initWithData:0 firstCurrency:nil secondCurrency:nil];
 }
 //==========================================================================================
--(id)initWithData:(float)aCourse firstCurrency:(NSString *)aFirstCurrency secondCurrency:(NSString *)aSecondCurrency
+-(id)initWithData:(NSString*)aCourse firstCurrency:(NSString *)aFirstCurrency secondCurrency:(NSString *)aSecondCurrency
 {
 	if (self = [super init])
 	{
@@ -46,10 +46,18 @@
 //==========================================================================================
 -(NSString*)fullInfo
 {
- 	return [NSString stringWithFormat: @"1 %@ = %f %@", 
+ 	return [NSString stringWithFormat: @"1 %@ = %@ %@", 
 			[self nameFirstCurrency],
 			[self course], 
 			[self nameSecondCurrency] ];
+}
+//==========================================================================================
+- (void) dealloc
+{
+	[nameFirstCurrency release];
+	[nameSecondCurrency release];
+	[course release];
+	[super dealloc];
 }
 //==========================================================================================
 @end
