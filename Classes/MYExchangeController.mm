@@ -220,6 +220,11 @@
 	[p release];
 }
 //==========================================================================================
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	[tableView deselectRowAtIndexPath:indexPath animated:TRUE];
+}
+//==========================================================================================
 -(MYExchangeChooseCurrencyController*) chooseCurrencyController
 {
 	if(!chooseCurrencyController)
