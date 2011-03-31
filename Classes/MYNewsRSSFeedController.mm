@@ -140,10 +140,6 @@
 //==========================================================================================
 - (void) loadRssFeed
 {
-	//spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-	//spinner.center = self.view.center;
-	//[self.view addSubview:spinner];
-	//[spinner startAnimating];
 	[spinneredView show];
 	
 	// prepare
