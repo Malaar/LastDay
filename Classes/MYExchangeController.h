@@ -40,6 +40,8 @@
 - (MYExchangeChooseCurrencyController*) chooseCurrencyController;
 - (BOOL) loadNameCurrency;
 - (BOOL) loadDataCyrrency;
+- (void) saveDataCyrrency;
 - (void) loadRssFeed;
 - (void) updataRssCyrrency: (MYExchangeDataCyrrency*) aDataCyrrency;
+
 @end

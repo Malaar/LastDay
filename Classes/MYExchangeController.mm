@@ -39,7 +39,7 @@
 	UIBarButtonItem* bbi;
 	
 	bbi = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-														target:nil 
+														target:self
 														action:@selector(loadRssFeed)] autorelease];
 	self.navigationItem.rightBarButtonItem = bbi;
 	
@@ -64,7 +64,7 @@
 	// item: cancel editing 
 	bbi = [[[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStyleBordered
 														 target:self
-														 action:@selector(loadRssFeed)] autorelease];
+														 action:@selector(editExchangeTableView)] autorelease];
 	[toolBarItems addObject: bbi];
 	editButton = bbi;
 	
@@ -98,8 +98,11 @@
 				updata = TRUE;
 				break;
 		}		
-		if (updata) 
+		if (updata)
+		{
 			[exchangeTableView reloadData];
+			//[self loadRssFeed];
+		}
 
 	}
 	[[self chooseCurrencyController] setTypeAction: actionNoTupe];
@@ -272,6 +275,34 @@
 	return result;
 }
 //==========================================================================================
+- (void) saveDataCyrrency
+{
+	if(!dataCyrrency || [dataCyrrency  count] == 0)
+		return;
+	
+	TiXmlDocument domDocument;
+	TiXmlElement* rootNode = new TiXmlElement("dataCyrrency");
+	
+	for(int i = 0; i < [dataCyrrency count]; ++i)
+	{
+		MYExchangeDataCyrrency* data = [dataCyrrency objectAtIndex: i];
+		TiXmlElement* itemNode = new TiXmlElement("item");
+		itemNode->SetAttribute("fnc", [[data nameFirstCurrency] UTF8String]);
+		itemNode->SetAttribute("snc", [[data nameSecondCurrency] UTF8String]);
+		itemNode->SetAttribute("isnc", [data indexFirstCurrency]);
+		itemNode->SetAttribute("ifnc", [data indexSecondCurrency ]);
+		itemNode->SetAttribute("course", [[data nameFirstCurrency] UTF8String]);
+		
+		rootNode->LinkEndChild(itemNode);
+	}
+	//domDocument.LinkEndChild(rootNode);
+	
+	// save into the Documents/ directory
+	NSString* messagesPath =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+	const char* strPath = [[messagesPath stringByAppendingPathComponent:@"messTemplates.xml"] UTF8String];
+	domDocument.SaveFile(strPath);
+}
+//==========================================================================================
 - (void) loadRssFeed
 {	
 	if ([dataCyrrency count]) 
@@ -294,7 +325,7 @@
 		[rssConnection release];
 	}
 		
-	NSString* strURL = [NSString stringWithFormat:@"http://themoneyconverter.com/%@/rss.xm",
+	NSString* strURL = [NSString stringWithFormat:@"http://themoneyconverter.com/%@/rss.xml",
 						aDataCyrrency.nameFirstCurrency];
 	NSURL* url = [NSURL URLWithString:strURL];
 	NSURLRequest* request = [[[NSURLRequest alloc] initWithURL:url
@@ -312,21 +343,32 @@
 	TiXmlDocument domDocument;
 	domDocument.Parse(receivedXMLString);
 	TiXmlElement* rootNode = domDocument.RootElement();
-	TiXmlElement* channelNode = rootNode->FirstChildElement("title");
-	if (!channelNode) {
-		NSLog(@"!!!!!!!!!NO!!!!!!");
-	}
-	else {
-		NSLog(@"~~~~~~~~~~~~~~~YES~~~~~~~~~~~");
-	}
-
-	//TiXmlElement* itemNode = channelNode->FirstChildElement("item");
-	/*
-	while(itemNode)
+	TiXmlElement* channelNode = rootNode->FirstChildElement("channel");	
+	if (channelNode)
 	{
-		itemNode = itemNode->NextSiblingElement("item");
+		MYExchangeDataCyrrency * cyrrency = [dataCyrrency objectAtIndex:indexLoadDataCyrrency];
+		if (cyrrency) 
+		{
+			NSString* key = [NSString stringWithFormat:@"%@/%@",cyrrency.nameSecondCurrency,cyrrency.nameFirstCurrency ];
+			TiXmlElement* itemNode = channelNode->FirstChildElement("item");
+			while(itemNode)
+			{
+				const char* cStr = itemNode->FirstChildElement("title")->GetText();
+				NSString* itemKey = [NSString stringWithUTF8String: cStr];
+				if ([key isEqualToString:itemKey]) 
+				{
+					const char* cStr = itemNode->FirstChildElement("description")->GetText();
+					char* s = strstr(cStr, "= ");
+					s = strchr(strchr( strchr(s,'='),' '),' ');
+					s = strtok(s," ");
+					[[dataCyrrency objectAtIndex:indexLoadDataCyrrency]	setCourse:[NSString stringWithUTF8String:s]];
+					break;
+				}
+				itemNode = itemNode->NextSiblingElement("item");
+			}
+		}				
 	}
-	*/
+	
 	indexLoadDataCyrrency++;
 	if (indexLoadDataCyrrency == [dataCyrrency count]) 
 	{
@@ -358,7 +400,7 @@
 }
 //==========================================================================================
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
+{	
 	[receivedData appendData:data];
 }
 //==========================================================================================
