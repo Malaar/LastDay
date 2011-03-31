@@ -849,6 +849,13 @@
 			name = Messages;
 			sourceTree = "<group>";
 		};
+		02C21B9F1345374B009D6C2C /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Weather;
+			sourceTree = "<group>";
+		};
 		02ED94821331547D00D58A35 /* JSONFramework */ = {
 			isa = PBXGroup;
 			children = (
@@ -910,6 +917,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				02C21B9F1345374B009D6C2C /* Weather */,
 				027648CD1343C3C80040422B /* Earth */,
 				5BA92ABD134290B600D96F19 /* Exchange */,
 				0294E2DC133686B30034C040 /* Messages */,
