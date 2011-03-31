@@ -127,6 +127,9 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D801B30F44B63D00FB423F /* CoreData.framework */; };
+		5B1E0C4013451CAB004C22FC /* MYEarthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E0C3B13451CAB004C22FC /* MYEarthController.m */; };
+		5B1E0C4113451CAB004C22FC /* MYEarthquaceAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E0C3D13451CAB004C22FC /* MYEarthquaceAnnotation.m */; };
+		5B1E0C4213451CAB004C22FC /* MYEarthquaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E0C3F13451CAB004C22FC /* MYEarthquaceController.m */; };
 		5BA92A72134282B600D96F19 /* MYSpinneredView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA92A71134282B600D96F19 /* MYSpinneredView.m */; };
 		5BA92AB71342909900D96F19 /* MYExchangeChooseCurrencyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA92AAE1342909900D96F19 /* MYExchangeChooseCurrencyController.m */; };
 		5BA92AB81342909900D96F19 /* MYExchangeChooseCurrencyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BA92AAF1342909900D96F19 /* MYExchangeChooseCurrencyController.xib */; };
@@ -361,6 +364,12 @@
 		28D801B30F44B63D00FB423F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
 		32CA4F630368D1EE00C91783 /* LastDay_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LastDay_Prefix.pch; sourceTree = "<group>"; };
+		5B1E0C3A13451CAB004C22FC /* MYEarthController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYEarthController.h; sourceTree = "<group>"; };
+		5B1E0C3B13451CAB004C22FC /* MYEarthController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYEarthController.m; sourceTree = "<group>"; };
+		5B1E0C3C13451CAB004C22FC /* MYEarthquaceAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYEarthquaceAnnotation.h; sourceTree = "<group>"; };
+		5B1E0C3D13451CAB004C22FC /* MYEarthquaceAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYEarthquaceAnnotation.m; sourceTree = "<group>"; };
+		5B1E0C3E13451CAB004C22FC /* MYEarthquaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYEarthquaceController.h; sourceTree = "<group>"; };
+		5B1E0C3F13451CAB004C22FC /* MYEarthquaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYEarthquaceController.m; sourceTree = "<group>"; };
 		5BA92A70134282B600D96F19 /* MYSpinneredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYSpinneredView.h; sourceTree = "<group>"; };
 		5BA92A71134282B600D96F19 /* MYSpinneredView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYSpinneredView.m; sourceTree = "<group>"; };
 		5BA92AAD1342909900D96F19 /* MYExchangeChooseCurrencyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYExchangeChooseCurrencyController.h; sourceTree = "<group>"; };
@@ -800,6 +809,12 @@
 		027648CD1343C3C80040422B /* Earth */ = {
 			isa = PBXGroup;
 			children = (
+				5B1E0C3A13451CAB004C22FC /* MYEarthController.h */,
+				5B1E0C3B13451CAB004C22FC /* MYEarthController.m */,
+				5B1E0C3C13451CAB004C22FC /* MYEarthquaceAnnotation.h */,
+				5B1E0C3D13451CAB004C22FC /* MYEarthquaceAnnotation.m */,
+				5B1E0C3E13451CAB004C22FC /* MYEarthquaceController.h */,
+				5B1E0C3F13451CAB004C22FC /* MYEarthquaceController.m */,
 			);
 			name = Earth;
 			sourceTree = "<group>";
@@ -1170,6 +1185,9 @@
 				5BA92AB91342909900D96F19 /* MYExchangeController.mm in Sources */,
 				5BA92ABB1342909900D96F19 /* MYExchangeDataCyrrency.m in Sources */,
 				5BA92ABC1342909900D96F19 /* MYExchangeNameCyrrency.m in Sources */,
+				5B1E0C4013451CAB004C22FC /* MYEarthController.m in Sources */,
+				5B1E0C4113451CAB004C22FC /* MYEarthquaceAnnotation.m in Sources */,
+				5B1E0C4213451CAB004C22FC /* MYEarthquaceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
