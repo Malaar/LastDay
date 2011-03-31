@@ -22,6 +22,16 @@
 		[self.navigationItem setTitle : @"Exchange rate"];		
 		[self loadNameCurrency];
 		[self loadDataCyrrency];
+		
+		NSNotificationCenter* notificationCenter = [NSNotificationCenter defaultCenter];
+		[notificationCenter addObserver:self
+							   selector:@selector(needSaveNotification:)
+								   name:UIApplicationWillTerminateNotification
+								 object:nil];
+		[notificationCenter addObserver:self
+							   selector:@selector(needSaveNotification:)
+								   name:UIApplicationDidEnterBackgroundNotification
+								 object:nil];
 	}
 	return self;
 }
@@ -271,8 +281,50 @@
 {
 	BOOL result = FALSE;
 	dataCyrrency = [[NSMutableArray alloc] init];
-	//...
+	
+	TiXmlDocument domDocument;
+	
+	const char* messagesPath;
+	
+	// try to load from Documents/ directory:
+	NSString* strPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+	strPath = [strPath stringByAppendingPathComponent:@"dataCyrrency.xml"];
+	
+	if( [[NSFileManager defaultManager] fileExistsAtPath:strPath] )
+	{
+		messagesPath = [strPath UTF8String];
+	}
+	
+	if( messagesPath && domDocument.LoadFile(messagesPath) )
+	{
+		TiXmlElement* rootNode = domDocument.RootElement();
+		TiXmlElement* itemNode = rootNode->FirstChildElement("item");
+		while(itemNode)
+		{			
+			const char* fnc = itemNode->Attribute("fnc");
+			const char* snc = itemNode->Attribute("snc");
+			const char* cours = itemNode->Attribute("course");
+			int isnc = 0;
+			itemNode->QueryIntAttribute("isnc",&isnc);
+			int ifnc = 0;
+			itemNode->QueryIntAttribute("ifnc",&ifnc);
+			
+			MYExchangeDataCyrrency* newCurrency = [[[MYExchangeDataCyrrency alloc] 
+												   initWithData:cours
+												   firstCurrency:fnc
+												   secondCurrency:snc
+												   indexFirstCurrency:ifnc
+													indexSecondCurrency:isnc] autorelease];
+			[dataCyrrency addObject:newCurrency];
+			itemNode = itemNode->NextSiblingElement("item");
+		}
+	}
 	return result;
+}
+//==========================================================================================
+- (void) needSaveNotification: (NSNotification*) notification
+{
+	[self saveDataCyrrency];
 }
 //==========================================================================================
 - (void) saveDataCyrrency
@@ -289,17 +341,20 @@
 		TiXmlElement* itemNode = new TiXmlElement("item");
 		itemNode->SetAttribute("fnc", [[data nameFirstCurrency] UTF8String]);
 		itemNode->SetAttribute("snc", [[data nameSecondCurrency] UTF8String]);
-		itemNode->SetAttribute("isnc", [data indexFirstCurrency]);
-		itemNode->SetAttribute("ifnc", [data indexSecondCurrency ]);
-		itemNode->SetAttribute("course", [[data nameFirstCurrency] UTF8String]);
+		itemNode->SetAttribute("ifnc", [data indexFirstCurrency]);
+		itemNode->SetAttribute("isnc", [data indexSecondCurrency]);
+		itemNode->SetAttribute("course", [[data course] UTF8String]);
+		
+		//NSString* test = [NSString stringWithUTF8String: itemNode->GetText()];
+		//NSLog(test);
 		
 		rootNode->LinkEndChild(itemNode);
 	}
-	//domDocument.LinkEndChild(rootNode);
+	domDocument.LinkEndChild(rootNode);
 	
 	// save into the Documents/ directory
 	NSString* messagesPath =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-	const char* strPath = [[messagesPath stringByAppendingPathComponent:@"messTemplates.xml"] UTF8String];
+	const char* strPath = [[messagesPath stringByAppendingPathComponent:@"dataCyrrency.xml"] UTF8String];
 	domDocument.SaveFile(strPath);
 }
 //==========================================================================================

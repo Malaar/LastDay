@@ -41,6 +41,7 @@
 - (BOOL) loadNameCurrency;
 - (BOOL) loadDataCyrrency;
 - (void) saveDataCyrrency;
+- (void) needSaveNotification: (NSNotification*) notification;
 - (void) loadRssFeed;
 - (void) updataRssCyrrency: (MYExchangeDataCyrrency*) aDataCyrrency;
 
