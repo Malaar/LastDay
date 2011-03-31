@@ -31,7 +31,10 @@
 - (id)initWithData: (NSString*)aCourse 
 	 firstCurrency: (NSString*)aFirstCurrency 
 	secondCurrency: (NSString*)aSecondCurrency;
-//indexFirstCurrency: (NSInteger) aIndexFirstCurrency
-//indexSecondCurrency:(NSInteger) aIndexSecondCurrency; 
+- (id)   initWithData: (const char*)aCourse 
+		firstCurrency: (const char*)aFirstCurrency 
+	   secondCurrency: (const char*)aSecondCurrency
+   indexFirstCurrency: (int) aIndexFirstCurrency
+  indexSecondCurrency: (int) aIndexSecondCurrency;
 - (NSString*)fullInfo;
 @end

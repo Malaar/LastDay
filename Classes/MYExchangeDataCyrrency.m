@@ -30,7 +30,7 @@
 //==========================================================================================
 -(id)init
 {
-	return [self initWithData:0 firstCurrency:nil secondCurrency:nil];
+	return [self initWithData:nil firstCurrency:nil secondCurrency:nil];
 }
 //==========================================================================================
 -(id)initWithData:(NSString*)aCourse firstCurrency:(NSString *)aFirstCurrency secondCurrency:(NSString *)aSecondCurrency
@@ -40,6 +40,23 @@
 		self.course = aCourse;
 		self.nameFirstCurrency = aFirstCurrency;
 		self.nameSecondCurrency = aSecondCurrency;
+	}
+	return self;
+}
+//==========================================================================================
+- (id)   initWithData: (const char*)aCourse 
+		firstCurrency: (const char*)aFirstCurrency 
+	   secondCurrency: (const char*)aSecondCurrency
+   indexFirstCurrency: (int) aIndexFirstCurrency
+  indexSecondCurrency: (int) aIndexSecondCurrency
+{
+	if (self = [super init])
+	{
+		self.course = [NSString stringWithUTF8String:aCourse];
+		self.nameFirstCurrency = [NSString stringWithUTF8String:aFirstCurrency];
+		self.nameSecondCurrency = [NSString stringWithUTF8String:aSecondCurrency];
+		self.indexFirstCurrency = aIndexFirstCurrency;
+		self.indexSecondCurrency = aIndexSecondCurrency;
 	}
 	return self;
 }
