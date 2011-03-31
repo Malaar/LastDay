@@ -11,19 +11,21 @@
 #import "MYPhotoController.h"
 #import "MYNewsController.h"
 #import "MYExchangeController.h"
-
+#import "MYEarthController.h"
 
 @interface MYRootController : UITableViewController
 {
 	NSMutableArray* themeArray;
 
 	// controllers
+	MYEarthController* earthController;
 	MYMessageController* messageController;
 	MYPhotoController* photoController;
 	MYNewsController* newsController;
 	MYExchangeController* exchangeController;
 }
 
+- (MYEarthController*) earthController;
 - (MYMessageController*) messageController;
 - (MYPhotoController*) photoController;
 - (MYNewsController*) newsController;

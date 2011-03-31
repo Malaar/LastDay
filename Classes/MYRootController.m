@@ -23,8 +23,8 @@
 	// set themes
 	themeArray = [[NSMutableArray alloc] init];
 	
-	UIImage* image = [UIImage imageNamed:@"weather.png"];
-	MYThemeData* themeData = [MYThemeData themeDataWithTitle:@"Weather" image:image];
+	UIImage* image = [UIImage imageNamed:@"earth.png"];
+	MYThemeData* themeData = [MYThemeData themeDataWithTitle:@"Earth" image:image];
 	[themeArray addObject:themeData];
 	
 	image = [UIImage imageNamed:@"camera.png"];
@@ -80,6 +80,9 @@
 {
 	switch([indexPath section])
 	{
+		case 0:
+			[self.navigationController pushViewController:[self earthController] animated:YES];
+			break;
 		case 1:
 			//if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
 			if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
@@ -115,11 +118,21 @@
 //==========================================================================================
 - (void)dealloc 
 {
+	[earthController release];
 	[themeArray release];
 	[photoController release];
 	[newsController release];
 	[exchangeController release];
     [super dealloc];
+}
+
+//==========================================================================================
+- (MYEarthController*) earthController
+{
+	if(!earthController)
+		earthController = [[MYEarthController alloc] init];
+	
+	return earthController;
 }
 
 //==========================================================================================

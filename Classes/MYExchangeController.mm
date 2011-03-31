@@ -294,7 +294,7 @@
 		[rssConnection release];
 	}
 		
-	NSString* strURL = [NSString stringWithFormat:@"http://themoneyconverter.com/%@/rss.xm",
+	NSString* strURL = [NSString stringWithFormat:@"http://themoneyconverter.com/%@/rss.xml",
 						aDataCyrrency.nameFirstCurrency];
 	NSURL* url = [NSURL URLWithString:strURL];
 	NSURLRequest* request = [[[NSURLRequest alloc] initWithURL:url
