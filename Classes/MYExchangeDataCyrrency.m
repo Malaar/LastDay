@@ -19,7 +19,7 @@
 	return [[[MYExchangeDataCyrrency alloc] init] autorelease];
 }
 //==========================================================================================
-+(id)newCyrrencyWithData:(float)aCourse 
++(id)newCyrrencyWithData:(NSString *)aCourse 
 		   firstCurrency:(NSString *)aFirstCurrency 
 		  secondCurrency:(NSString *)aSecondCurrency
 {
@@ -30,10 +30,10 @@
 //==========================================================================================
 -(id)init
 {
-	return [self initWithData:0 firstCurrency:nil secondCurrency:nil];
+	return [self initWithData:nil firstCurrency:nil secondCurrency:nil];
 }
 //==========================================================================================
--(id)initWithData:(float)aCourse firstCurrency:(NSString *)aFirstCurrency secondCurrency:(NSString *)aSecondCurrency
+-(id)initWithData:(NSString*)aCourse firstCurrency:(NSString *)aFirstCurrency secondCurrency:(NSString *)aSecondCurrency
 {
 	if (self = [super init])
 	{
@@ -44,12 +44,37 @@
 	return self;
 }
 //==========================================================================================
+- (id)   initWithData: (const char*)aCourse 
+		firstCurrency: (const char*)aFirstCurrency 
+	   secondCurrency: (const char*)aSecondCurrency
+   indexFirstCurrency: (int) aIndexFirstCurrency
+  indexSecondCurrency: (int) aIndexSecondCurrency
+{
+	if (self = [super init])
+	{
+		self.course = [NSString stringWithUTF8String:aCourse];
+		self.nameFirstCurrency = [NSString stringWithUTF8String:aFirstCurrency];
+		self.nameSecondCurrency = [NSString stringWithUTF8String:aSecondCurrency];
+		self.indexFirstCurrency = aIndexFirstCurrency;
+		self.indexSecondCurrency = aIndexSecondCurrency;
+	}
+	return self;
+}
+//==========================================================================================
 -(NSString*)fullInfo
 {
- 	return [NSString stringWithFormat: @"1 %@ = %f %@", 
+ 	return [NSString stringWithFormat: @"1 %@ = %@ %@", 
 			[self nameFirstCurrency],
 			[self course], 
 			[self nameSecondCurrency] ];
+}
+//==========================================================================================
+- (void) dealloc
+{
+	[nameFirstCurrency release];
+	[nameSecondCurrency release];
+	[course release];
+	[super dealloc];
 }
 //==========================================================================================
 @end

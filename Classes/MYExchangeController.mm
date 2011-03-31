@@ -22,6 +22,16 @@
 		[self.navigationItem setTitle : @"Exchange rate"];		
 		[self loadNameCurrency];
 		[self loadDataCyrrency];
+		
+		NSNotificationCenter* notificationCenter = [NSNotificationCenter defaultCenter];
+		[notificationCenter addObserver:self
+							   selector:@selector(needSaveNotification:)
+								   name:UIApplicationWillTerminateNotification
+								 object:nil];
+		[notificationCenter addObserver:self
+							   selector:@selector(needSaveNotification:)
+								   name:UIApplicationDidEnterBackgroundNotification
+								 object:nil];
 	}
 	return self;
 }
@@ -39,7 +49,7 @@
 	UIBarButtonItem* bbi;
 	
 	bbi = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-														target:nil 
+														target:self
 														action:@selector(loadRssFeed)] autorelease];
 	self.navigationItem.rightBarButtonItem = bbi;
 	
@@ -64,7 +74,7 @@
 	// item: cancel editing 
 	bbi = [[[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStyleBordered
 														 target:self
-														 action:@selector(loadRssFeed)] autorelease];
+														 action:@selector(editExchangeTableView)] autorelease];
 	[toolBarItems addObject: bbi];
 	editButton = bbi;
 	
@@ -98,8 +108,11 @@
 				updata = TRUE;
 				break;
 		}		
-		if (updata) 
+		if (updata)
+		{
 			[exchangeTableView reloadData];
+			//[self loadRssFeed];
+		}
 
 	}
 	[[self chooseCurrencyController] setTypeAction: actionNoTupe];
@@ -268,8 +281,81 @@
 {
 	BOOL result = FALSE;
 	dataCyrrency = [[NSMutableArray alloc] init];
-	//...
+	
+	TiXmlDocument domDocument;
+	
+	const char* messagesPath;
+	
+	// try to load from Documents/ directory:
+	NSString* strPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+	strPath = [strPath stringByAppendingPathComponent:@"dataCyrrency.xml"];
+	
+	if( [[NSFileManager defaultManager] fileExistsAtPath:strPath] )
+	{
+		messagesPath = [strPath UTF8String];
+	}
+	
+	if( messagesPath && domDocument.LoadFile(messagesPath) )
+	{
+		TiXmlElement* rootNode = domDocument.RootElement();
+		TiXmlElement* itemNode = rootNode->FirstChildElement("item");
+		while(itemNode)
+		{			
+			const char* fnc = itemNode->Attribute("fnc");
+			const char* snc = itemNode->Attribute("snc");
+			const char* cours = itemNode->Attribute("course");
+			int isnc = 0;
+			itemNode->QueryIntAttribute("isnc",&isnc);
+			int ifnc = 0;
+			itemNode->QueryIntAttribute("ifnc",&ifnc);
+			
+			MYExchangeDataCyrrency* newCurrency = [[[MYExchangeDataCyrrency alloc] 
+												   initWithData:cours
+												   firstCurrency:fnc
+												   secondCurrency:snc
+												   indexFirstCurrency:ifnc
+													indexSecondCurrency:isnc] autorelease];
+			[dataCyrrency addObject:newCurrency];
+			itemNode = itemNode->NextSiblingElement("item");
+		}
+	}
 	return result;
+}
+//==========================================================================================
+- (void) needSaveNotification: (NSNotification*) notification
+{
+	[self saveDataCyrrency];
+}
+//==========================================================================================
+- (void) saveDataCyrrency
+{
+	if(!dataCyrrency || [dataCyrrency  count] == 0)
+		return;
+	
+	TiXmlDocument domDocument;
+	TiXmlElement* rootNode = new TiXmlElement("dataCyrrency");
+	
+	for(int i = 0; i < [dataCyrrency count]; ++i)
+	{
+		MYExchangeDataCyrrency* data = [dataCyrrency objectAtIndex: i];
+		TiXmlElement* itemNode = new TiXmlElement("item");
+		itemNode->SetAttribute("fnc", [[data nameFirstCurrency] UTF8String]);
+		itemNode->SetAttribute("snc", [[data nameSecondCurrency] UTF8String]);
+		itemNode->SetAttribute("ifnc", [data indexFirstCurrency]);
+		itemNode->SetAttribute("isnc", [data indexSecondCurrency]);
+		itemNode->SetAttribute("course", [[data course] UTF8String]);
+		
+		//NSString* test = [NSString stringWithUTF8String: itemNode->GetText()];
+		//NSLog(test);
+		
+		rootNode->LinkEndChild(itemNode);
+	}
+	domDocument.LinkEndChild(rootNode);
+	
+	// save into the Documents/ directory
+	NSString* messagesPath =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+	const char* strPath = [[messagesPath stringByAppendingPathComponent:@"dataCyrrency.xml"] UTF8String];
+	domDocument.SaveFile(strPath);
 }
 //==========================================================================================
 - (void) loadRssFeed
@@ -312,21 +398,32 @@
 	TiXmlDocument domDocument;
 	domDocument.Parse(receivedXMLString);
 	TiXmlElement* rootNode = domDocument.RootElement();
-	TiXmlElement* channelNode = rootNode->FirstChildElement("title");
-	if (!channelNode) {
-		NSLog(@"!!!!!!!!!NO!!!!!!");
-	}
-	else {
-		NSLog(@"~~~~~~~~~~~~~~~YES~~~~~~~~~~~");
-	}
-
-	//TiXmlElement* itemNode = channelNode->FirstChildElement("item");
-	/*
-	while(itemNode)
+	TiXmlElement* channelNode = rootNode->FirstChildElement("channel");	
+	if (channelNode)
 	{
-		itemNode = itemNode->NextSiblingElement("item");
+		MYExchangeDataCyrrency * cyrrency = [dataCyrrency objectAtIndex:indexLoadDataCyrrency];
+		if (cyrrency) 
+		{
+			NSString* key = [NSString stringWithFormat:@"%@/%@",cyrrency.nameSecondCurrency,cyrrency.nameFirstCurrency ];
+			TiXmlElement* itemNode = channelNode->FirstChildElement("item");
+			while(itemNode)
+			{
+				const char* cStr = itemNode->FirstChildElement("title")->GetText();
+				NSString* itemKey = [NSString stringWithUTF8String: cStr];
+				if ([key isEqualToString:itemKey]) 
+				{
+					const char* cStr = itemNode->FirstChildElement("description")->GetText();
+					char* s = strstr(cStr, "= ");
+					s = strchr(strchr( strchr(s,'='),' '),' ');
+					s = strtok(s," ");
+					[[dataCyrrency objectAtIndex:indexLoadDataCyrrency]	setCourse:[NSString stringWithUTF8String:s]];
+					break;
+				}
+				itemNode = itemNode->NextSiblingElement("item");
+			}
+		}				
 	}
-	*/
+	
 	indexLoadDataCyrrency++;
 	if (indexLoadDataCyrrency == [dataCyrrency count]) 
 	{
@@ -358,7 +455,7 @@
 }
 //==========================================================================================
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
+{	
 	[receivedData appendData:data];
 }
 //==========================================================================================
