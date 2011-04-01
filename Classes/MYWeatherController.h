@@ -9,18 +9,19 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "MYWeather.h"
+#import "MYWeatherView.h"
 
-@interface MYWeatherController : UIViewController 
-			<MKMapViewDelegate, NSXMLParserDelegate>
+@interface MYWeatherController : UIViewController <MKMapViewDelegate>
 {
 	MKMapView* mapViewWeather;
 	NSURLConnection* rssConnection;
 	NSMutableData* receivedData;	///< received data from server
+	MYWeatherView* weatherView;
 
-	MYWeather* weather; 
 }
 
 @property (nonatomic, retain) MYWeather* weather;
 - (void) loadWeatherRSS;
+- (void) showWeatherInCurrLocation;
 
 @end

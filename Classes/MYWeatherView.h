@@ -20,7 +20,7 @@
 	MYWeather* weatherInfo;
 }
 
-@property (nonatomic, copy) MYWeather* weatherInfo;
+@property (nonatomic, retain) MYWeather* weatherInfo;
 
 + (id) weatherView;
 - (id) init;
