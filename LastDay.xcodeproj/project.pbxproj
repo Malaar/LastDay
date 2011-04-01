@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0211E9941345D2B50092538C /* MYWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0211E9931345D2B50092538C /* MYWeatherView.m */; };
 		0211E9E01345E4200092538C /* MYWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 0211E9DF1345E4200092538C /* MYWeather.m */; };
+		02601F451346415200CE1EA5 /* nameCurrency.xml in Resources */ = {isa = PBXBuildFile; fileRef = 02601F441346415200CE1EA5 /* nameCurrency.xml */; };
 		02607405133500E7000A16E6 /* MYPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02607403133500E7000A16E6 /* MYPhotoController.m */; };
 		02607406133500E7000A16E6 /* MYPhotoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02607404133500E7000A16E6 /* MYPhotoController.xib */; };
 		0260742013351222000A16E6 /* facebook-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0260741E13351222000A16E6 /* facebook-icon.png */; };
@@ -159,6 +160,7 @@
 		0211E9931345D2B50092538C /* MYWeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MYWeatherView.m; path = Classes/MYWeatherView.m; sourceTree = SOURCE_ROOT; };
 		0211E9DE1345E4200092538C /* MYWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MYWeather.h; path = Classes/MYWeather.h; sourceTree = SOURCE_ROOT; };
 		0211E9DF1345E4200092538C /* MYWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MYWeather.m; path = Classes/MYWeather.m; sourceTree = SOURCE_ROOT; };
+		02601F441346415200CE1EA5 /* nameCurrency.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = nameCurrency.xml; sourceTree = SOURCE_ROOT; };
 		02607402133500E7000A16E6 /* MYPhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYPhotoController.h; sourceTree = "<group>"; };
 		02607403133500E7000A16E6 /* MYPhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYPhotoController.m; sourceTree = "<group>"; };
 		02607404133500E7000A16E6 /* MYPhotoController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MYPhotoController.xib; path = Classes/MYPhotoController.xib; sourceTree = "<group>"; };
@@ -985,6 +987,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				02601F441346415200CE1EA5 /* nameCurrency.xml */,
 				0260741E13351222000A16E6 /* facebook-icon.png */,
 				0260741F13351222000A16E6 /* flickr_icon.png */,
 				02ED94E013316DD500D58A35 /* NIB */,
@@ -1104,6 +1107,7 @@
 				027648D51343CBF00040422B /* earth.png in Resources */,
 				027648D61343CBF00040422B /* earthquace_center.png in Resources */,
 				027648D71343CBF00040422B /* earthquace.png in Resources */,
+				02601F451346415200CE1EA5 /* nameCurrency.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

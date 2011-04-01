@@ -18,6 +18,4 @@
 
 @property (nonatomic, retain) MYNewsRSSItem* rssItem;
 
-- (void) commentNews;	///< Alloow yser to comment this news on some social web site
-
 @end

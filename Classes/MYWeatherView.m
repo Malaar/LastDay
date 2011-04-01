@@ -80,7 +80,7 @@
 	// lbTempHumPres
 	[lbTempHumPres release];
 	lbTempHumPres = [[[UILabel alloc] initWithFrame:CGRectMake(10, 40, screenBounds.size.width, 25)] autorelease];
-	lbTempHumPres.text = [NSString stringWithFormat:@"%.1fC; %.1f %%; %.1f In", 
+	lbTempHumPres.text = [NSString stringWithFormat:@"%.1fC; %.1f%%; %.1f In", 
 						  weatherInfo.temperature,
 						  weatherInfo.humidity,
 						  weatherInfo.pressureIn];

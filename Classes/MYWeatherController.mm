@@ -32,8 +32,8 @@
 		
 		//
 		weatherView = [MYWeatherView weatherView];
-		//[self.view addSubview: weatherView];
-		[mapViewWeather addSubview: weatherView];
+		[self.view addSubview: weatherView];
+		//[mapViewWeather addSubview: weatherView];
 	
 		//[self showWeatherInCurrLocation];
 	}
@@ -127,8 +127,8 @@
 	const char* receivedXMLString = [xmlData UTF8String];
 	TiXmlDocument domDocument;
 	domDocument.Parse(receivedXMLString);
+	NSLog(@"%@",xmlData);
 
-	
 	TiXmlElement* rootNode = domDocument.RootElement();
 	TiXmlElement* itemNode = rootNode->FirstChildElement("display_location");
 
@@ -172,6 +172,7 @@
 							initWithData:[NSData dataWithContentsOfURL:
 										  [NSURL URLWithString:pathImage]]];
 	
+	[self showWeatherInCurrLocation];
 	NSLog(@"%@",xmlData);
 }
 
@@ -179,13 +180,17 @@
 - (void) showWeatherInCurrLocation
 {
 	//update weather view
-	MYWeather* testWeather = [MYWeather weather];
-	testWeather.strLocation = @"Test location";
-	testWeather.windDir = @"WWS";
-	[testWeather retain];
-	weatherView.weatherInfo = testWeather;
+//	MYWeather* testWeather = [MYWeather weather];
+//	testWeather.strLocation = @"Test location";
+//	testWeather.windDir = @"WWS";
+//	[testWeather retain];
+//	weatherView.weatherInfo = testWeather;
 	
-	CLLocationCoordinate2D currentCoord = mapViewWeather.userLocation.coordinate;
+	weatherView.weatherInfo = weather;
+	
+	CLLocationCoordinate2D currentCoord;// = mapViewWeather.userLocation.coordinate;
+	currentCoord.latitude = 50;
+	currentCoord.longitude = 25;
 	MKCoordinateRegion coordRegion = MKCoordinateRegionMakeWithDistance(currentCoord, 100000, 100000);
 	[mapViewWeather setRegion:coordRegion animated:YES];
 }
@@ -196,7 +201,7 @@
 {
 	if([annotation isKindOfClass:[MKUserLocation class]])
 	{
-		[self showWeatherInCurrLocation];
+		//[self showWeatherInCurrLocation];
 	}
 	
 	return nil;	// default annotation view
