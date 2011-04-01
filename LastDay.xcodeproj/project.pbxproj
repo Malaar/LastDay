@@ -102,7 +102,7 @@
 		029F8A8B133BDB73002B513C /* MYMessageDetailed.xib in Resources */ = {isa = PBXBuildFile; fileRef = 029F8A89133BDB73002B513C /* MYMessageDetailed.xib */; };
 		02B6A1511343D213008585C3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B6A1501343D213008585C3 /* CoreLocation.framework */; };
 		02B6A1531343D213008585C3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B6A1521343D213008585C3 /* MapKit.framework */; };
-		02C21BA4134537C3009D6C2C /* MYWeatherAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C21BA3134537C3009D6C2C /* MYWeatherAnnotation.m */; };
+		02C21BA4134537C3009D6C2C /* MYWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C21BA3134537C3009D6C2C /* MYWeather.m */; };
 		02CC54BC133026630051FE80 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 02CC54BA133026630051FE80 /* Icon.png */; };
 		02CC54BD133026630051FE80 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02CC54BB133026630051FE80 /* Icon@2x.png */; };
 		02ED94961331547D00D58A35 /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ED94851331547D00D58A35 /* NSObject+JSON.m */; };
@@ -323,8 +323,8 @@
 		029F8A89133BDB73002B513C /* MYMessageDetailed.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MYMessageDetailed.xib; path = Classes/MYMessageDetailed.xib; sourceTree = "<group>"; };
 		02B6A1501343D213008585C3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		02B6A1521343D213008585C3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		02C21BA2134537C3009D6C2C /* MYWeatherAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYWeatherAnnotation.h; sourceTree = "<group>"; };
-		02C21BA3134537C3009D6C2C /* MYWeatherAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYWeatherAnnotation.m; sourceTree = "<group>"; };
+		02C21BA2134537C3009D6C2C /* MYWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYWeather.h; sourceTree = "<group>"; };
+		02C21BA3134537C3009D6C2C /* MYWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYWeather.m; sourceTree = "<group>"; };
 		02CC54BA133026630051FE80 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = resources/Icon.png; sourceTree = SOURCE_ROOT; };
 		02CC54BB133026630051FE80 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "resources/Icon@2x.png"; sourceTree = SOURCE_ROOT; };
 		02ED94831331547D00D58A35 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSON.h; path = JSONFramework/JSON.h; sourceTree = SOURCE_ROOT; };
@@ -855,8 +855,8 @@
 		02C21B9F1345374B009D6C2C /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				02C21BA2134537C3009D6C2C /* MYWeatherAnnotation.h */,
-				02C21BA3134537C3009D6C2C /* MYWeatherAnnotation.m */,
+				02C21BA2134537C3009D6C2C /* MYWeather.h */,
+				02C21BA3134537C3009D6C2C /* MYWeather.m */,
 			);
 			name = Weather;
 			sourceTree = "<group>";
@@ -1201,7 +1201,7 @@
 				5B1E0C4013451CAB004C22FC /* MYEarthController.m in Sources */,
 				5B1E0C4113451CAB004C22FC /* MYEarthquaceAnnotation.m in Sources */,
 				5B1E0C4213451CAB004C22FC /* MYEarthquaceController.m in Sources */,
-				02C21BA4134537C3009D6C2C /* MYWeatherAnnotation.m in Sources */,
+				02C21BA4134537C3009D6C2C /* MYWeather.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
