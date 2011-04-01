@@ -11,6 +11,9 @@
 
 
 @implementation MYWeatherController
+
+@synthesize weather;
+
 //==========================================================================================
 - (id)init
 {
@@ -57,6 +60,7 @@
 	[rssConnection cancel];
 	[rssConnection release];
 	[receivedData release];
+	[weather release];
     [super dealloc];
 }
 //==========================================================================================
@@ -67,6 +71,9 @@
 		[rssConnection cancel];
 		[rssConnection release];
 	}
+	
+	[weather release];
+	weather = [[MYWeather alloc] init];
 	
 	[receivedData release];
 	receivedData = [NSMutableData new];
@@ -111,8 +118,25 @@
 	NSString* xmlData = [[[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding] autorelease];
 	const char* receivedXMLString = [xmlData UTF8String];
 	TiXmlDocument domDocument;
-	domDocument.Parse(receivedXMLString);	
+	domDocument.Parse(receivedXMLString);
+
+	/*
+	TiXmlElement* rootNode = domDocument.RootElement();
+	TiXmlElement* itemNode = rootNode->FirstChildElement("display_location");	
+	[weather setStrLocation:[ NSString stringWithUTF8String: itemNode->GetText()]];
+	
+	while(itemNode)
+	{
+		NSString* templateMessage = [NSString stringWithUTF8String: itemNode->GetText()];
+		[messages addObject: templateMessage];		
+		itemNode = itemNode->NextSiblingElement("item");
+	}
+	 */
+	
 	NSLog(@"%@",xmlData);
+	
+	
+	
 }
 //==========================================================================================
 
