@@ -231,8 +231,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -269,6 +267,8 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>02C21B9F1345374B009D6C2C</string>
+								<string>027648CD1343C3C80040422B</string>
 								<string>5BA92ABD134290B600D96F19</string>
 								<string>0294E2DC133686B30034C040</string>
 								<string>02607401133500C6000A16E6</string>
@@ -282,6 +282,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>7</integer>
 									<integer>5</integer>
 									<integer>4</integer>
 									<integer>0</integer>
@@ -318,12 +319,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MYExchangeController.mm</string>
+								<string>MYWeatherAnnotation.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,11 +334,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MYExchangeController.mm</string>
+										<string>MYWeatherAnnotation.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>02C21BA013453758009D6C2C</string>
+										<string>02C21BAB134539C4009D6C2C</string>
 										<key>history</key>
 										<array>
 											<string>02CC54C8133026AB0051FE80</string>
@@ -400,7 +403,10 @@
 											<string>0258BD7B1345125900592358</string>
 											<string>02C21B8F13452240009D6C2C</string>
 											<string>02C21B9013452240009D6C2C</string>
-											<string>02C21B9113452240009D6C2C</string>
+											<string>02C21BA7134539C4009D6C2C</string>
+											<string>02C21BA8134539C4009D6C2C</string>
+											<string>02C21BA9134539C4009D6C2C</string>
+											<string>02C21BAA134539C4009D6C2C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

@@ -28,6 +28,7 @@
 
 - (void)setLatitude: (CLLocationDegrees) aLatitude;
 - (void)setLongitude: (CLLocationDegrees) aLongitude;
+
 - (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate;
 
 - (NSString *)title;
