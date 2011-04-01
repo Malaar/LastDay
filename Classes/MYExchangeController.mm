@@ -199,7 +199,7 @@
 //==========================================================================================
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	[exchangeTableView deselectRowAtIndexPath:indexPath animated:YES];
 	indexSelecteCell = [indexPath row];
 	[[self chooseCurrencyController] setCorrectionDataCyrrency: [dataCyrrency objectAtIndex:[indexPath row]]];
 	[self actionCorrectDataCyrrency];
@@ -225,9 +225,9 @@
 	[p release];
 }
 //==========================================================================================
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	[tableView deselectRowAtIndexPath:indexPath animated:TRUE];
+	[exchangeTableView deselectRowAtIndexPath:indexPath animated:TRUE];
 }
 //==========================================================================================
 -(MYExchangeChooseCurrencyController*) chooseCurrencyController
