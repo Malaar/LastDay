@@ -24,8 +24,8 @@
 @property (nonatomic, assign) NSInteger indexSecondCurrency;
 @property (nonatomic, retain) NSString* course;
 
-+(id)newCyrrency;
-+(id)newCyrrencyWithData: (NSString*)aCourse firstCurrency:(NSString*)aFirstCurrency secondCurrency: (NSString*)aSecondCurrency;
++(id)cyrrency;
++(id)cyrrencyWithData: (NSString*)aCourse firstCurrency:(NSString*)aFirstCurrency secondCurrency: (NSString*)aSecondCurrency;
 
 - (id)init;
 - (id)initWithData: (NSString*)aCourse 
