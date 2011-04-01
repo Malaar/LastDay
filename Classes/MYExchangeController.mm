@@ -13,7 +13,7 @@
 @implementation MYExchangeController
 
 //==========================================================================================
-@synthesize namesCyrrency;
+@synthesize namesCyrrency, lastDataUpdata;
 //==========================================================================================
 - (id) init
 {
@@ -41,6 +41,8 @@
 	[super viewDidLoad];
 	
 	spinneredView = [[MYSpinneredView alloc] initWithParentView:self.parentViewController.view];
+	
+	[labelLastDataUpdata setText: lastDataUpdata];
 	
 	[exchangeTableView setDelegate:self];
 	[exchangeTableView setDataSource: self];
@@ -126,6 +128,8 @@
 	toolBar = nil;	
 	[exchangeTableView release];
 	exchangeTableView = nil;
+	[labelLastDataUpdata release];
+	labelLastDataUpdata = nil;
 }
 //==========================================================================================
 - (void) viewWillDisappear:(BOOL)animated
@@ -149,6 +153,7 @@
 {
 	[exchangeTableView release];
 	[toolBar release];
+	[labelLastDataUpdata release];
 	[editButton release];
 	[namesCyrrency release];
 	[dataCyrrency release];
@@ -288,7 +293,11 @@
 	dataCyrrency = [[NSMutableArray alloc] init];
 	
 	TiXmlDocument domDocument;
-	
+	if (lastDataUpdata) 
+	{
+		[lastDataUpdata release];
+		lastDataUpdata = nil;
+	}
 	const char* messagesPath = 0;
 	
 	// try to load from Documents/ directory:
@@ -303,6 +312,12 @@
 	if( messagesPath && domDocument.LoadFile(messagesPath) )
 	{
 		TiXmlElement* rootNode = domDocument.RootElement();
+		TiXmlElement* lastDataNode = rootNode->FirstChildElement("lastDate");
+		if (lastDataNode) 
+		{
+			[self setLastDataUpdata:[NSString stringWithUTF8String:lastDataNode->GetText() ]];
+			[labelLastDataUpdata setText:[self lastDataUpdata]];
+		}		
 		TiXmlElement* itemNode = rootNode->FirstChildElement("item");
 		while(itemNode)
 		{			
@@ -340,6 +355,11 @@
 	TiXmlDocument domDocument;
 	TiXmlElement* rootNode = new TiXmlElement("dataCyrrency");
 	
+	TiXmlElement* timeNode = new TiXmlElement("lastDate");
+	TiXmlText* text = new TiXmlText( [[self lastDataUpdata] UTF8String] );
+	timeNode->LinkEndChild(text);
+	rootNode->LinkEndChild(timeNode);
+	
 	for(int i = 0; i < [dataCyrrency count]; ++i)
 	{
 		MYExchangeDataCyrrency* data = [dataCyrrency objectAtIndex: i];
@@ -349,9 +369,6 @@
 		itemNode->SetAttribute("ifnc", [data indexFirstCurrency]);
 		itemNode->SetAttribute("isnc", [data indexSecondCurrency]);
 		itemNode->SetAttribute("course", [[data course] UTF8String]);
-		
-		//NSString* test = [NSString stringWithUTF8String: itemNode->GetText()];
-		//NSLog(test);
 		
 		rootNode->LinkEndChild(itemNode);
 	}
@@ -410,7 +427,15 @@
 		if (cyrrency) 
 		{
 			NSString* key = [NSString stringWithFormat:@"%@/%@",cyrrency.nameSecondCurrency,cyrrency.nameFirstCurrency ];
-			TiXmlElement* itemNode = channelNode->FirstChildElement("item");
+			//date
+			TiXmlElement* itemNode = channelNode->FirstChildElement("lastBuildDate");
+			if (itemNode) {
+				NSString* newDate = [NSString stringWithUTF8String:itemNode->GetText()];
+				[self setLastDataUpdata:newDate];
+				[labelLastDataUpdata setText:[self lastDataUpdata]];
+			}		
+			//item
+			itemNode = channelNode->FirstChildElement("item");
 			while(itemNode)
 			{
 				const char* cStr = itemNode->FirstChildElement("title")->GetText();
