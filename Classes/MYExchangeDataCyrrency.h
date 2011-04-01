@@ -20,12 +20,12 @@
 
 @property (nonatomic, retain) NSString* nameFirstCurrency;
 @property (nonatomic, retain) NSString* nameSecondCurrency;
-@property (nonatomic) NSInteger indexFirstCurrency;
-@property (nonatomic) NSInteger indexSecondCurrency;
+@property (nonatomic, assign) NSInteger indexFirstCurrency;
+@property (nonatomic, assign) NSInteger indexSecondCurrency;
 @property (nonatomic, retain) NSString* course;
 
-+(id)newCyrrency;
-+(id)newCyrrencyWithData: (NSString*)aCourse firstCurrency:(NSString*)aFirstCurrency secondCurrency: (NSString*)aSecondCurrency;
++(id)cyrrency;
++(id)cyrrencyWithData: (NSString*)aCourse firstCurrency:(NSString*)aFirstCurrency secondCurrency: (NSString*)aSecondCurrency;
 
 - (id)init;
 - (id)initWithData: (NSString*)aCourse 

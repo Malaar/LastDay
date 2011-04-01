@@ -14,12 +14,12 @@
 //==========================================================================================
 @synthesize nameFirstCurrency,nameSecondCurrency,indexFirstCurrency,indexSecondCurrency,course;
 //==========================================================================================
-+(id)newCyrrency
++(id)cyrrency
 {
 	return [[[MYExchangeDataCyrrency alloc] init] autorelease];
 }
 //==========================================================================================
-+(id)newCyrrencyWithData:(NSString *)aCourse 
++(id)cyrrencyWithData:(NSString *)aCourse 
 		   firstCurrency:(NSString *)aFirstCurrency 
 		  secondCurrency:(NSString *)aSecondCurrency
 {

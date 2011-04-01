@@ -14,12 +14,12 @@
 //==========================================================================================
 @synthesize shortName, fullName;
 //==========================================================================================
-+(id)newNameCurrency
++(id)nameCurrency
 {
 	return [[[MYExchangeNameCyrrency alloc] init] autorelease];
 }
 //==========================================================================================
-+(id)newNameCurrencyWithTitle:(NSString *)aShortName 
++(id)nameCurrencyWithTitle:(NSString *)aShortName 
 					 fullName:(NSString *)aFullName
 {
 	return [[[MYExchangeNameCyrrency alloc] initWithTitle:aShortName 

@@ -17,8 +17,8 @@
 @property (nonatomic, retain) NSString* shortName;
 @property (nonatomic, retain) NSString* fullName;
 
-+(id)newNameCurrency;
-+(id)newNameCurrencyWithTitle:(NSString*) aShortName fullName:(NSString*) aFullName;
++(id)nameCurrency;
++(id)nameCurrencyWithTitle:(NSString*) aShortName fullName:(NSString*) aFullName;
 
 -(id)init;
 -(id)initWithTitle: (NSString*) aShortName fullName: (NSString*) aFullName;

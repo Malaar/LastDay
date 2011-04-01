@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-
+#import "MYWeather.h"
 
 @interface MYWeatherController : UIViewController 
 			<MKMapViewDelegate, NSXMLParserDelegate>
@@ -16,8 +16,11 @@
 	MKMapView* mapViewWeather;
 	NSURLConnection* rssConnection;
 	NSMutableData* receivedData;	///< received data from server
-	
+
+	MYWeather* weather; 
 }
+
+@property (nonatomic, retain) MYWeather* weather;
 - (void) loadWeatherRSS;
 
 @end
