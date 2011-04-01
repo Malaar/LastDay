@@ -18,6 +18,7 @@
 	NSMutableData* receivedData;	///< received data from server
 	MYWeatherView* weatherView;
 
+	MYWeather* weather; 
 }
 
 @property (nonatomic, retain) MYWeather* weather;
