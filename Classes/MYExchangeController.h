@@ -15,6 +15,7 @@
 {
 	IBOutlet UIToolbar* toolBar;
 	IBOutlet UITableView* exchangeTableView;
+	IBOutlet UILabel* labelLastDataUpdata;
 	
 	MYSpinneredView* spinneredView;
 	MYExchangeChooseCurrencyController* chooseCurrencyController;	
@@ -32,7 +33,8 @@
 	NSMutableData* receivedData;
 }
 
-@property (nonatomic, retain, readonly) NSMutableArray* namesCyrrency;
+@property (nonatomic, retain) NSMutableArray* namesCyrrency;
+@property (nonatomic, retain) NSString* lastDataUpdata;
 
 - (void) actionAddDataCyrrency;
 - (void) actionCorrectDataCyrrency;
