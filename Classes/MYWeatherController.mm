@@ -80,7 +80,7 @@
 	
 	CLLocationCoordinate2D coord = mapViewWeather.userLocation.coordinate;
 	NSString* strURL = [NSString stringWithFormat:@"http://api.wunderground.com/auto/wui/geo/WXCurrentObXML/index.xml?query=%f,%f",
-						coord.latitude,coord.longitude];
+						50,25];
 	
 	NSURL* rssURL = [[NSURL alloc] initWithString: strURL];
 	NSURLRequest* request = [[[NSURLRequest alloc] initWithURL:rssURL
@@ -120,23 +120,51 @@
 	TiXmlDocument domDocument;
 	domDocument.Parse(receivedXMLString);
 
-	/*
-	TiXmlElement* rootNode = domDocument.RootElement();
-	TiXmlElement* itemNode = rootNode->FirstChildElement("display_location");	
-	[weather setStrLocation:[ NSString stringWithUTF8String: itemNode->GetText()]];
 	
-	while(itemNode)
-	{
-		NSString* templateMessage = [NSString stringWithUTF8String: itemNode->GetText()];
-		[messages addObject: templateMessage];		
-		itemNode = itemNode->NextSiblingElement("item");
-	}
-	 */
+	TiXmlElement* rootNode = domDocument.RootElement();
+	TiXmlElement* itemNode = rootNode->FirstChildElement("display_location");
+
+	TiXmlElement* node = itemNode->FirstChildElement("full");	
+	weather.strLocation = [ NSString stringWithUTF8String: node->GetText()];
+	
+	node = itemNode->FirstChildElement("elevation");	
+	weather.elevation =[[NSString stringWithUTF8String:node->GetText()]floatValue];
+	
+	itemNode = rootNode->FirstChildElement("temp_c");	
+	weather.temperature = [[NSString stringWithUTF8String:itemNode->GetText()] floatValue];	
+	
+	itemNode = rootNode->FirstChildElement("relative_humidity");	
+	weather.humidity = [[NSString stringWithUTF8String:itemNode->GetText()] floatValue];		
+	
+	itemNode = rootNode->FirstChildElement("wind_degrees");	
+	weather.windDegrees = [[NSString stringWithUTF8String:itemNode->GetText()] floatValue];
+	
+	itemNode = rootNode->FirstChildElement("wind_mph");	
+	weather.windSpeed = [[NSString stringWithUTF8String:itemNode->GetText()] floatValue];
+	
+	itemNode = rootNode->FirstChildElement("pressure_string");	
+	weather.pressureIn = [[NSString stringWithUTF8String:itemNode->GetText()] floatValue];
+	
+	itemNode = rootNode->FirstChildElement("pressure_mb");	
+	weather.pressureMB = [[NSString stringWithUTF8String:itemNode->GetText()] floatValue];
+	
+	itemNode = rootNode->FirstChildElement("wind_dir");
+	weather.windDir = [NSString stringWithUTF8String:itemNode->GetText()];
+	
+	
+	//image
+	TiXmlElement* iconsNode = rootNode->FirstChildElement("icons");
+	TiXmlElement* iconSetNode = iconsNode->FirstChildElement("icon_set");
+	TiXmlElement* iconUrl = iconSetNode->FirstChildElement("icon_url");
+	NSString* pathImage = [NSString stringWithUTF8String:iconUrl->GetText()];
+	
+	NSLog(@"%@",pathImage);
+	
+	weather.weatherImage = [[UIImage alloc] 
+							initWithData:[NSData dataWithContentsOfURL:
+										  [NSURL URLWithString:pathImage]]];
 	
 	NSLog(@"%@",xmlData);
-	
-	
-	
 }
 //==========================================================================================
 
