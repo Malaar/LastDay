@@ -14,16 +14,13 @@
 	UIImageView* imageWeather;
 	UILabel* lbLocation;
 	UILabel* lbTempHumPres;		// for temperature, humidity and pressure
-	//UILabel* lbTemperature;
-	//UILabel* lbHumidity;
-	//UILabel* lbPressure;
 	UILabel* lbWindInfo;
 
 	
 	MYWeather* weatherInfo;
 }
 
-@property (nonatomic, copy) MYWeather* weatherInfo;
+@property (nonatomic, retain) MYWeather* weatherInfo;
 
 + (id) weatherView;
 - (id) init;

@@ -29,6 +29,13 @@
 		mapViewWeather.mapType = MKMapTypeHybrid;
 		mapViewWeather.showsUserLocation = YES;
 		[self.view addSubview:mapViewWeather];
+		
+		//
+		weatherView = [MYWeatherView weatherView];
+		//[self.view addSubview: weatherView];
+		[mapViewWeather addSubview: weatherView];
+	
+		//[self showWeatherInCurrLocation];
 	}
 	return self;
 }
@@ -61,6 +68,7 @@
 	[rssConnection release];
 	[receivedData release];
 	[weather release];
+	[weatherView release];
     [super dealloc];
 }
 //==========================================================================================
@@ -166,6 +174,36 @@
 	
 	NSLog(@"%@",xmlData);
 }
+
+//==========================================================================================
+- (void) showWeatherInCurrLocation
+{
+	//update weather view
+	MYWeather* testWeather = [MYWeather weather];
+	testWeather.strLocation = @"Test location";
+	testWeather.windDir = @"WWS";
+	[testWeather retain];
+	weatherView.weatherInfo = testWeather;
+	
+	CLLocationCoordinate2D currentCoord = mapViewWeather.userLocation.coordinate;
+	MKCoordinateRegion coordRegion = MKCoordinateRegionMakeWithDistance(currentCoord, 100000, 100000);
+	[mapViewWeather setRegion:coordRegion animated:YES];
+}
+
+
+//==========================================================================================
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+	if([annotation isKindOfClass:[MKUserLocation class]])
+	{
+		[self showWeatherInCurrLocation];
+	}
+	
+	return nil;	// default annotation view
+}
+
+//==========================================================================================
+//==========================================================================================
 //==========================================================================================
 
 @end
