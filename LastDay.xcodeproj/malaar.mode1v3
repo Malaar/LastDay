@@ -231,6 +231,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -282,7 +284,6 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>7</integer>
 									<integer>5</integer>
 									<integer>4</integer>
 									<integer>0</integer>
@@ -319,14 +320,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MYWeather.m</string>
+								<string>MYWeatherView.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -334,11 +333,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MYWeather.m</string>
+										<string>MYWeatherView.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>0211E9911345D1840092538C</string>
+										<string>0211E9BD1345DE580092538C</string>
 										<key>history</key>
 										<array>
 											<string>02CC54C8133026AB0051FE80</string>
@@ -407,8 +406,8 @@
 											<string>0211E9831345D13A0092538C</string>
 											<string>0211E9841345D13A0092538C</string>
 											<string>0211E9851345D13A0092538C</string>
-											<string>0211E9901345D1840092538C</string>
-											<string>0211E9861345D13A0092538C</string>
+											<string>0211E9AD1345DD850092538C</string>
+											<string>0211E9B11345DD850092538C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -466,9 +465,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>0211E9891345D13A0092538C</string>
+				<string>0211E9BE1345DE580092538C</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>0211E98A1345D13A0092538C</string>
+				<string>0211E9BF1345DE580092538C</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -631,7 +630,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MYWeather.m</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -648,8 +647,6 @@
 							<string>339pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -689,7 +686,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>02B6CE10132ECA7600071735</string>
-				<string>0211E9761345CED40092538C</string>
+				<string>0211E9C01345DE580092538C</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -733,8 +730,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {467, 294}}</string>
-											<string>{{467, 0}, {557, 294}}</string>
+											<string>{{0, 0}, {467, 301}}</string>
+											<string>{{467, 0}, {557, 301}}</string>
 										</array>
 									</dict>
 									<key>VerticalSplitView</key>
@@ -749,8 +746,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {1024, 294}}</string>
-											<string>{{0, 294}, {1024, 286}}</string>
+											<string>{{0, 0}, {1024, 301}}</string>
+											<string>{{0, 301}, {1024, 279}}</string>
 										</array>
 									</dict>
 								</dict>
@@ -783,7 +780,7 @@
 										<real>327</real>
 									</array>
 									<key>Frame</key>
-									<string>{{467, 0}, {557, 294}}</string>
+									<string>{{467, 0}, {557, 301}}</string>
 									<key>RubberWindowFrame</key>
 									<string>0 125 1024 621 0 0 1024 746 </string>
 								</dict>
@@ -811,13 +808,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>0211E9771345CED40092538C</string>
+				<string>0211E9C11345DE580092538C</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>0211E9781345CED40092538C</string>
-				<string>0211E9791345CED40092538C</string>
-				<string>0211E97A1345CED40092538C</string>
-				<string>0211E97B1345CED40092538C</string>
-				<string>0211E97C1345CED40092538C</string>
+				<string>0211E9C21345DE580092538C</string>
+				<string>0211E9C31345DE580092538C</string>
+				<string>0211E9C41345DE580092538C</string>
+				<string>0211E9C51345DE580092538C</string>
+				<string>0211E9C61345DE580092538C</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
