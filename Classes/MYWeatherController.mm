@@ -112,7 +112,7 @@
 	const char* receivedXMLString = [xmlData UTF8String];
 	TiXmlDocument domDocument;
 	domDocument.Parse(receivedXMLString);	
-	NSLog(xmlData);
+	NSLog(@"%@",xmlData);
 }
 //==========================================================================================
 

@@ -73,6 +73,7 @@
 	switch([indexPath section])
 	{
 		case 0:
+			[self.navigationController pushViewController:[self weatherController] animated:YES];
 			break;
 		case 1:
 			[self.navigationController pushViewController:[self earthquaceController] animated:YES];
@@ -111,6 +112,12 @@
 	return earthquaceController;
 }
 
+- (MYWeatherController*) weatherController
+{
+	if(!weatherController)
+		weatherController = [[MYWeatherController alloc] init];
+	return weatherController;
+}
 //==========================================================================================
 //==========================================================================================
 //==========================================================================================

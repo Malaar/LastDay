@@ -311,8 +311,6 @@
 							<string>0pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXBottomSmartGroupGIDs</key>
@@ -350,6 +348,7 @@
 										<string>29B97314FDCFA39411CA2CEA</string>
 										<string>080E96DDFE201D6D7F000001</string>
 										<string>02C21B9F1345374B009D6C2C</string>
+										<string>027648CD1343C3C80040422B</string>
 										<string>5BA92ABD134290B600D96F19</string>
 										<string>0294E2DC133686B30034C040</string>
 										<string>02ED94B41331612100D58A35</string>
@@ -361,7 +360,8 @@
 									<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 									<array>
 										<array>
-											<integer>5</integer>
+											<integer>14</integer>
+											<integer>12</integer>
 											<integer>4</integer>
 											<integer>0</integer>
 										</array>
@@ -401,12 +401,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MYWeatherView.h</string>
+								<string>MYEarthController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -414,11 +416,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MYWeatherView.h</string>
+										<string>MYEarthController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>5B49A1701345E84A0046C3F6</string>
+										<string>5B49A19B1345EC530046C3F6</string>
 										<key>history</key>
 										<array>
 											<string>5B905CB113362FEE003C6DC9</string>
@@ -435,8 +437,6 @@
 											<string>5BA92A77134282D100D96F19</string>
 											<string>5BA92B0A13429C4A00D96F19</string>
 											<string>5B7A577D1343967600251E49</string>
-											<string>5B7A57B11343A08C00251E49</string>
-											<string>5B7A57B51343A08C00251E49</string>
 											<string>5B7A57B71343A08C00251E49</string>
 											<string>5B7A57B81343A08C00251E49</string>
 											<string>5B80DF911343DEB200BE9EE6</string>
@@ -447,13 +447,11 @@
 											<string>5B8E18A01344176000DD68D3</string>
 											<string>5B8E18A21344176000DD68D3</string>
 											<string>5B8E18A31344176000DD68D3</string>
-											<string>5B8E18A61344176000DD68D3</string>
 											<string>5B7E1E281344F439009DBCB3</string>
 											<string>5B7E1E2B1344F439009DBCB3</string>
 											<string>5B7E1E2D1344F439009DBCB3</string>
 											<string>5B7E1E2E1344F439009DBCB3</string>
 											<string>5B7E1E2F1344F439009DBCB3</string>
-											<string>5B7E1E301344F439009DBCB3</string>
 											<string>5B7E1E6C1344FBB8009DBCB3</string>
 											<string>5B7E1E6E1344FBB8009DBCB3</string>
 											<string>5B7E1EAD1345023D009DBCB3</string>
@@ -466,20 +464,26 @@
 											<string>5B7E1F31134519BE009DBCB3</string>
 											<string>5B7E1F33134519BE009DBCB3</string>
 											<string>5B7E1F4013451A79009DBCB3</string>
-											<string>5B1E0C4A13451DF2004C22FC</string>
-											<string>5B1E0C4B13451DF2004C22FC</string>
-											<string>5B1E0C4C13451DF2004C22FC</string>
 											<string>5B1E0C4D13451DF2004C22FC</string>
 											<string>5B1E0C4E13451DF2004C22FC</string>
-											<string>5B1E0C4F13451DF2004C22FC</string>
 											<string>5B7F3F411345C2A3004CA2D0</string>
 											<string>5B7F3F421345C2A3004CA2D0</string>
 											<string>5B7F3F5C1345C3E2004CA2D0</string>
 											<string>5B7F3F5D1345C3E2004CA2D0</string>
-											<string>5B7F3F5E1345C3E2004CA2D0</string>
 											<string>5B49A16D1345E84A0046C3F6</string>
-											<string>5B49A16E1345E84A0046C3F6</string>
-											<string>5B49A16F1345E84A0046C3F6</string>
+											<string>5B49A17B1345EAA20046C3F6</string>
+											<string>5B49A17C1345EAA20046C3F6</string>
+											<string>5B49A17F1345EAA20046C3F6</string>
+											<string>5B49A1911345EC530046C3F6</string>
+											<string>5B49A1921345EC530046C3F6</string>
+											<string>5B49A1931345EC530046C3F6</string>
+											<string>5B49A1941345EC530046C3F6</string>
+											<string>5B49A1951345EC530046C3F6</string>
+											<string>5B49A1961345EC530046C3F6</string>
+											<string>5B49A1971345EC530046C3F6</string>
+											<string>5B49A1981345EC530046C3F6</string>
+											<string>5B49A1991345EC530046C3F6</string>
+											<string>5B49A19A1345EC530046C3F6</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -681,6 +685,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>5B49A19C1345EC530046C3F6</string>
+		<string>5B49A18B1345EAA20046C3F6</string>
+		<string>5B49A18C1345EAA20046C3F6</string>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>5B9259B51334F339008BBEA3</string>
 		<string>/Users/yuriy/Desktop/LD/LastDay.xcodeproj</string>
 	</array>
@@ -884,13 +893,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>5B7F3F491345C2A3004CA2D0</string>
+				<string>5B49A1841345EAA20046C3F6</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>5B7F3F4A1345C2A3004CA2D0</string>
-				<string>5B7F3F4B1345C2A3004CA2D0</string>
-				<string>5B7F3F4C1345C2A3004CA2D0</string>
-				<string>5B7F3F4D1345C2A3004CA2D0</string>
-				<string>5B7F3F4E1345C2A3004CA2D0</string>
+				<string>5B49A1851345EAA20046C3F6</string>
+				<string>5B49A1861345EAA20046C3F6</string>
+				<string>5B49A1871345EAA20046C3F6</string>
+				<string>5B49A1881345EAA20046C3F6</string>
+				<string>5B49A1891345EAA20046C3F6</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -1009,8 +1018,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -1046,7 +1053,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>5B7F3F4F1345C2A3004CA2D0</string>
+				<string>5B49A18A1345EAA20046C3F6</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -1056,7 +1063,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

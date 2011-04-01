@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MYEarthquaceController.h"
+#import "MYWeatherController.h"
 
 @interface MYEarthController : UITableViewController
 {
@@ -15,9 +16,10 @@
 	
 	// controllers
 	MYEarthquaceController* earthquaceController;
+	MYWeatherController* weatherController;
 }
 
 - (MYEarthquaceController*) earthquaceController;
-
+- (MYWeatherController*) weatherController;
 
 @end
