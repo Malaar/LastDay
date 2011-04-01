@@ -46,6 +46,11 @@
 //==========================================================================================
 - (void)dealloc
 {
+	[lbLocation release];
+	[lbTempHumPres release];
+	[lbWindInfo release];
+	[weatherInfo release];
+	
     [super dealloc];
 }
 

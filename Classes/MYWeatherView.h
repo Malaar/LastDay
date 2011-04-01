@@ -14,9 +14,6 @@
 	UIImageView* imageWeather;
 	UILabel* lbLocation;
 	UILabel* lbTempHumPres;		// for temperature, humidity and pressure
-	//UILabel* lbTemperature;
-	//UILabel* lbHumidity;
-	//UILabel* lbPressure;
 	UILabel* lbWindInfo;
 
 	
