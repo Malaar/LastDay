@@ -278,7 +278,7 @@
 			{			
 				NSString* shortName = [[[NSString alloc] initWithUTF8String: sName] autorelease];
 				NSString* fullName = [[[NSString alloc] initWithUTF8String: fName] autorelease];
-				MYExchangeNameCyrrency* nameCyrrency = [MYExchangeNameCyrrency newNameCurrencyWithTitle:shortName fullName:fullName]; 
+				MYExchangeNameCyrrency* nameCyrrency = [MYExchangeNameCyrrency nameCurrencyWithTitle:shortName fullName:fullName]; 
 				[namesCyrrency addObject: nameCyrrency];
 			}
 			itemNode = itemNode->NextSiblingElement("item");
