@@ -19,6 +19,7 @@
 	MYWeatherController* weatherController;
 }
 
+
 - (MYEarthquaceController*) earthquaceController;
 - (MYWeatherController*) weatherController;
 
